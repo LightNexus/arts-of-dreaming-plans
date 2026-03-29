@@ -189,6 +189,16 @@
     }
     .link-pill:hover { background: var(--teal-mid); }
 
+    /* ─── TECH PILLS ─── */
+    .tech-row { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin-top: 16px; padding-top: 14px; border-top: 1px solid var(--border); }
+    .tech-row-label { font-size: 10px; font-weight: 700; letter-spacing: 0.10em; text-transform: uppercase; color: var(--faint); margin-right: 2px; }
+    .tech-pill {
+      display: inline-flex; align-items: center; gap: 5px;
+      padding: 4px 10px; border-radius: 999px; font-size: 12px; font-weight: 600;
+      background: var(--navy); color: rgba(255,255,255,0.88);
+      border: 1px solid rgba(6,18,31,0.18);
+    }
+
     /* ─── CHECKBOXES ─── */
     .success-list, .priority-list { list-style: none; display: flex; flex-direction: column; gap: 8px; }
     .success-list li, .priority-list li { display: flex; align-items: flex-start; gap: 10px; font-size: 14px; }
@@ -413,7 +423,7 @@
       <p class="section-intro">This plan recreates the original structure as a clear action framework for improving the app experience, validating the core journey, and preparing the product to support meaningful monetization. The sequence follows the user path from access to insight.</p>
       <div class="plan-grid">
 
-        <article class="plan-card" data-card-id="auth">
+        <article class="plan-card" data-card-id="auth" data-tech="CRM,Firebase Auth">
           <div class="card-top">
             <div><div class="card-kicker">Feature 1</div><h3>Authentication</h3></div>
             <span class="status-badge teal">Foundation</span>
@@ -492,7 +502,7 @@
           </details>
         </article>
 
-        <article class="plan-card" data-card-id="assessment">
+        <article class="plan-card" data-card-id="assessment" data-tech="CRM,PostHog">
           <div class="card-top">
             <div><div class="card-kicker">Feature 4</div><h3>Dreamer type assessment</h3></div>
             <span class="status-badge">Identity layer</span>
@@ -519,7 +529,7 @@
           </details>
         </article>
 
-        <article class="plan-card" data-card-id="report">
+        <article class="plan-card" data-card-id="report" data-tech="Shopify,Instagram,TikTok,Pinterest,PostHog">
           <div class="card-top">
             <div><div class="card-kicker">Feature 5</div><h3>Archetype report</h3></div>
             <span class="status-badge gold">Conversion moment</span>
@@ -545,7 +555,7 @@
           </details>
         </article>
 
-        <article class="plan-card" data-card-id="settings">
+        <article class="plan-card" data-card-id="settings" data-tech="CRM,Stripe">
           <div class="card-top">
             <div><div class="card-kicker">Feature 6</div><h3>Settings and profile</h3></div>
             <span class="status-badge">Trust</span>
@@ -602,7 +612,7 @@
 
       <div class="priority-grid">
 
-        <article class="priority-card gold-card" data-card-id="m1" id="m1">
+        <article class="priority-card gold-card" data-card-id="m1" data-tech="Shopify,CRM,PostHog" id="m1">
           <div class="priority-card-top">
             <div class="priority-num-large gold">1</div>
             <div><div class="card-kicker">Priority 1 — Direct product sale</div><h3>Archetype → Physical Deck CTA</h3></div>
@@ -617,7 +627,7 @@
           <details><summary>Implementation details</summary><div class="details-body"><div class="detail-grid"><div class="detail-box"><h4>Depends on</h4><ul class="detail-list"><li><a href="#report">Archetype report</a></li><li>Clean purchase path and product page clarity</li></ul></div><div class="detail-box"><h4>Execution notes</h4><ul class="detail-list"><li>Use gold accent only around the deck CTA zone.</li><li>Make the offer feel devotional, tactile, and identity-matched.</li></ul></div></div></div></details>
         </article>
 
-        <article class="priority-card" data-card-id="m2" id="m2">
+        <article class="priority-card" data-card-id="m2" data-tech="Send.com,CRM,Zapier" id="m2">
           <div class="priority-card-top">
             <div class="priority-num-large">2</div>
             <div><div class="card-kicker">Priority 2 — Conversion pipeline</div><h3>Email nurture sequence</h3></div>
@@ -632,7 +642,7 @@
           <details><summary>Implementation details</summary><div class="details-body"><div class="detail-grid"><div class="detail-box"><h4>Depends on</h4><ul class="detail-list"><li><a href="#assessment">Assessment completion</a></li><li><a href="#report">Archetype report</a></li></ul></div><div class="detail-box"><h4>Suggested sequence</h4><ul class="detail-list"><li>Email 1: Your archetype reading</li><li>Email 2: How to work with this archetype</li><li>Email 3: Deck invitation</li><li>Email 4: Dream Sensei / Journal Pro teaser</li></ul></div></div></div></details>
         </article>
 
-        <article class="priority-card gold-card" data-card-id="m3" id="m3">
+        <article class="priority-card gold-card" data-card-id="m3" data-tech="Stripe,CRM" id="m3">
           <div class="priority-card-top">
             <div class="priority-num-large gold">3</div>
             <div><div class="card-kicker">Priority 3 — Recurring subscription</div><h3>Dream Sensei freemium gate</h3></div>
@@ -647,7 +657,7 @@
           <details><summary>Implementation details</summary><div class="details-body"><div class="detail-grid"><div class="detail-box"><h4>Depends on</h4><ul class="detail-list"><li><a href="#app-shell">Navigation clarity</a></li><li>Premium state handling in settings/billing</li></ul></div><div class="detail-box"><h4>Premium ideas</h4><ul class="detail-list"><li>Longer interpretations</li><li>History and saved readings</li><li>Advanced prompts and recurring guidance</li></ul></div></div></div></details>
         </article>
 
-        <article class="priority-card" data-card-id="m4" id="m4">
+        <article class="priority-card" data-card-id="m4" data-tech="Instagram,TikTok,Pinterest" id="m4">
           <div class="priority-card-top">
             <div class="priority-num-large">4</div>
             <div><div class="card-kicker">Priority 4 — Organic growth</div><h3>Social share card for archetype</h3></div>
@@ -662,7 +672,7 @@
           <details><summary>Implementation details</summary><div class="details-body"><div class="detail-grid"><div class="detail-box"><h4>Depends on</h4><ul class="detail-list"><li><a href="#report">Archetype report polish</a></li><li>Distinct archetype identity language</li></ul></div><div class="detail-box"><h4>Growth focus</h4><ul class="detail-list"><li>Design for Instagram story, square post, and link preview formats.</li><li>Track share rate and downstream assessment starts.</li></ul></div></div></div></details>
         </article>
 
-        <article class="priority-card" data-card-id="m5" id="m5">
+        <article class="priority-card" data-card-id="m5" data-tech="OneSignal,Firebase" id="m5">
           <div class="priority-card-top">
             <div class="priority-num-large">5</div>
             <div><div class="card-kicker">Priority 5 — Retention</div><h3>Daily card pull mechanic</h3></div>
@@ -677,7 +687,7 @@
           <details><summary>Implementation details</summary><div class="details-body"><div class="detail-grid"><div class="detail-box"><h4>Depends on</h4><ul class="detail-list"><li>Lightweight home/dashboard return point</li><li>Basic user history state</li></ul></div><div class="detail-box"><h4>Business role</h4><ul class="detail-list"><li>Improves retention before asking for bigger commitment.</li><li>Creates repeated surfaces for premium invitations.</li></ul></div></div></div></details>
         </article>
 
-        <article class="priority-card gold-card" data-card-id="m6" id="m6">
+        <article class="priority-card gold-card" data-card-id="m6" data-tech="Stripe,CRM" id="m6">
           <div class="priority-card-top">
             <div class="priority-num-large gold">6</div>
             <div><div class="card-kicker">Priority 6 — Recurring subscription</div><h3>Journal Pro upgrade</h3></div>
@@ -692,7 +702,7 @@
           <details><summary>Implementation details</summary><div class="details-body"><div class="detail-grid"><div class="detail-box"><h4>Depends on</h4><ul class="detail-list"><li><a href="#journal">Dream journal quality</a></li><li>Billing-ready settings and premium state UX</li></ul></div><div class="detail-box"><h4>Upsell moments</h4><ul class="detail-list"><li>After several journal entries</li><li>When pattern visibility becomes desirable</li><li>When users want deeper dream history</li></ul></div></div></div></details>
         </article>
 
-        <article class="priority-card" data-card-id="m7" id="m7">
+        <article class="priority-card" data-card-id="m7" data-tech="OneSignal,Firebase" id="m7">
           <div class="priority-card-top">
             <div class="priority-num-large">7</div>
             <div><div class="card-kicker">Priority 7 — Retention</div><h3>Streak system</h3></div>
@@ -707,7 +717,7 @@
           <details><summary>Implementation details</summary><div class="details-body"><div class="detail-grid"><div class="detail-box"><h4>Depends on</h4><ul class="detail-list"><li><a href="#m5">Daily card pull mechanic</a></li><li><a href="#journal">Journal usage consistency</a></li></ul></div><div class="detail-box"><h4>Best use</h4><ul class="detail-list"><li>Support retention, not primary monetization.</li><li>Use as a bridge into premium habit-based products later.</li></ul></div></div></div></details>
         </article>
 
-        <article class="priority-card" data-card-id="m8" id="m8">
+        <article class="priority-card" data-card-id="m8" data-tech="Skool.com,Send.com,Vimeo" id="m8">
           <div class="priority-card-top">
             <div class="priority-num-large">8</div>
             <div><div class="card-kicker">Priority 8 — Digital product</div><h3>Courses per archetype</h3></div>
@@ -722,7 +732,7 @@
           <details><summary>Implementation details</summary><div class="details-body"><div class="detail-grid"><div class="detail-box"><h4>Depends on</h4><ul class="detail-list"><li><a href="#m2">Email nurture</a></li><li>Clarity around archetype-based curriculum</li></ul></div><div class="detail-box"><h4>Offer strategy</h4><ul class="detail-list"><li>Use one-time purchase first.</li><li>Later include inside membership for added perceived value.</li></ul></div></div></div></details>
         </article>
 
-        <article class="priority-card gold-card" data-card-id="m9" id="m9">
+        <article class="priority-card gold-card" data-card-id="m9" data-tech="Shopify,Skool.com,Send.com,Stripe,CRM,Zapier" id="m9">
           <div class="priority-card-top">
             <div class="priority-num-large gold">9</div>
             <div><div class="card-kicker">Priority 9 — Highest LTV</div><h3>Annual membership bundle</h3></div>
@@ -850,6 +860,16 @@
           }
         });
       });
+
+      // — Inject tech pills —
+      const tech = el.dataset.tech;
+      if (tech) {
+        const techRow = document.createElement('div');
+        techRow.className = 'tech-row';
+        techRow.innerHTML = `<span class="tech-row-label">Integrations</span>` +
+          tech.split(',').map(t => `<span class="tech-pill">${t.trim()}</span>`).join('');
+        el.appendChild(techRow);
+      }
 
       // — Inject notes section —
       const wrap = document.createElement('div');
