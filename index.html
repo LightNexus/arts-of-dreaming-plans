@@ -317,6 +317,16 @@
     .footer-links a:hover { color: rgba(255,255,255,0.85); }
     .footer-copy { font-size: 12px; color: rgba(255,255,255,0.25); }
 
+    /* ─── TOAST ─── */
+    .toast {
+      position: fixed; bottom: 28px; left: 50%; transform: translateX(-50%) translateY(20px);
+      background: var(--navy); color: #fff; padding: 11px 20px; border-radius: 999px;
+      font-size: 13px; font-weight: 500; opacity: 0; pointer-events: none;
+      transition: opacity 0.2s, transform 0.2s; z-index: 999; white-space: nowrap;
+    }
+    .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+    .toast.error { background: #c53030; }
+
     /* ─── RESPONSIVE ─── */
     @media (max-width: 900px) {
       .hero-inner { grid-template-columns: 1fr; }
@@ -746,6 +756,8 @@
     </div>
   </footer>
 
+  <div class="toast" id="toast"></div>
+
   <!-- ─── FIREBASE ─── -->
   <script type="module">
     import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js';
@@ -763,6 +775,16 @@
     const app = initializeApp(firebaseConfig);
     const db = getFirestore(app);
 
+    // ── Toast ──
+    const toastEl = document.getElementById('toast');
+    let toastTimer;
+    function toast(msg, isError = false) {
+      toastEl.textContent = msg;
+      toastEl.className = 'toast show' + (isError ? ' error' : '');
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => { toastEl.classList.remove('show'); }, 3000);
+    }
+
     // ── Author ──
     let author = localStorage.getItem('aod-author') || '';
     const authorInput = document.getElementById('author-input');
@@ -770,14 +792,15 @@
     authorInput.addEventListener('change', () => {
       author = authorInput.value.trim();
       localStorage.setItem('aod-author', author);
+      if (author) toast(`Signed in as ${author}`);
     });
 
     function requireAuthor() {
       if (author) return true;
       authorInput.classList.add('shake');
       authorInput.focus();
-      authorInput.placeholder = 'Enter your name first…';
-      setTimeout(() => { authorInput.classList.remove('shake'); authorInput.placeholder = 'Enter your name…'; }, 800);
+      toast('Enter your name in the top bar first', true);
+      setTimeout(() => authorInput.classList.remove('shake'), 800);
       return false;
     }
 
@@ -814,11 +837,17 @@
 
         cb.addEventListener('change', async () => {
           if (!requireAuthor()) { cb.checked = !cb.checked; return; }
+          const prev = !cb.checked;
           try {
             await setDoc(ref, {
               tasks: { [idx]: { checked: cb.checked, author: cb.checked ? author : null, at: cb.checked ? new Date().toISOString() : null } }
             }, { merge: true });
-          } catch (e) { console.error(e); }
+            toast(cb.checked ? 'Task marked complete' : 'Task unchecked');
+          } catch (e) {
+            cb.checked = prev;
+            toast('Could not save — check Firestore is enabled', true);
+            console.error(e);
+          }
         });
       });
 
@@ -853,7 +882,11 @@
         try {
           await setDoc(ref, { notes: arrayUnion({ text, author, at: new Date().toISOString() }) }, { merge: true });
           ta.value = '';
-        } catch (e) { console.error(e); }
+          toast('Note posted');
+        } catch (e) {
+          toast('Could not save — check Firestore is enabled', true);
+          console.error(e);
+        }
       });
 
       // — Real-time listener —
