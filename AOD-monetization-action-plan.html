@@ -1,0 +1,1557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Arts of Dreaming — Monetization Action Plan</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #0d2e3e;
+      --navy-mid: #163e52;
+      --teal: #1a7a72;
+      --teal-dark: #125950;
+      --teal-light: #e8f5f4;
+      --teal-mid: #c2e6e2;
+      --gold: #c89b3c;
+      --gold-soft: #fef8ec;
+      --gold-mid: #f5e0a8;
+      --text: #0d2e3e;
+      --muted: #4a6572;
+      --faint: #8aa2af;
+      --border: rgba(13, 46, 62, 0.10);
+      --border-teal: rgba(26, 122, 114, 0.20);
+      --bg: #ffffff;
+      --surface: #f5f9fa;
+      --surface-2: #eef5f7;
+      --shadow-sm: 0 2px 8px rgba(13, 46, 62, 0.07);
+      --shadow: 0 8px 32px rgba(13, 46, 62, 0.10);
+      --shadow-lg: 0 20px 60px rgba(13, 46, 62, 0.14);
+      --radius: 16px;
+      --radius-sm: 10px;
+      --radius-lg: 24px;
+      --max: 1100px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.6;
+      font-size: 15px;
+    }
+
+    /* ─── NAV ─── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 28px;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .nav-logo {
+      font-weight: 800;
+      font-size: 17px;
+      color: var(--navy);
+      letter-spacing: -0.02em;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+    }
+    .nav-logo span {
+      width: 30px; height: 30px;
+      background: var(--teal);
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .nav-logo span svg { width: 16px; height: 16px; fill: #fff; }
+    .nav-links {
+      display: flex;
+      gap: 4px;
+      list-style: none;
+    }
+    .nav-links a {
+      padding: 6px 14px;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--muted);
+      text-decoration: none;
+      border-radius: 8px;
+      transition: background 0.15s, color 0.15s;
+    }
+    .nav-links a:hover { background: var(--surface); color: var(--text); }
+    .nav-cta {
+      background: var(--teal);
+      color: #fff !important;
+      padding: 8px 18px !important;
+      border-radius: 999px !important;
+      font-weight: 600 !important;
+      font-size: 14px !important;
+    }
+    .nav-cta:hover { background: var(--teal-dark) !important; color: #fff !important; }
+
+    /* ─── HERO ─── */
+    .hero {
+      background: linear-gradient(135deg, #0d2e3e 0%, #163e52 50%, #1a4e5e 100%);
+      padding: 80px 28px 100px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -60px; right: -60px;
+      width: 500px; height: 500px;
+      background: radial-gradient(circle, rgba(26,122,114,0.25) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -80px; left: 30%;
+      width: 400px; height: 400px;
+      background: radial-gradient(circle, rgba(200,155,60,0.10) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 380px;
+      gap: 48px;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,255,255,0.10);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 999px;
+      padding: 6px 14px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.10em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.75);
+      margin-bottom: 24px;
+    }
+    .hero-eyebrow::before {
+      content: '';
+      width: 6px; height: 6px;
+      background: var(--gold);
+      border-radius: 50%;
+    }
+    .hero h1 {
+      font-size: clamp(2.4rem, 4.5vw, 3.8rem);
+      font-weight: 800;
+      line-height: 1.08;
+      letter-spacing: -0.03em;
+      color: #fff;
+      margin-bottom: 20px;
+    }
+    .hero h1 em {
+      font-style: normal;
+      color: var(--gold);
+    }
+    .hero-desc {
+      color: rgba(255,255,255,0.65);
+      font-size: 16px;
+      line-height: 1.7;
+      max-width: 52ch;
+      margin-bottom: 36px;
+    }
+    .hero-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 24px;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 14px;
+      text-decoration: none;
+      transition: all 0.15s;
+      cursor: pointer;
+      border: none;
+    }
+    .btn-primary { background: var(--teal); color: #fff; }
+    .btn-primary:hover { background: var(--teal-dark); }
+    .btn-ghost {
+      background: rgba(255,255,255,0.10);
+      border: 1px solid rgba(255,255,255,0.20);
+      color: #fff;
+    }
+    .btn-ghost:hover { background: rgba(255,255,255,0.18); }
+
+    /* hero card */
+    .hero-card {
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+      backdrop-filter: blur(8px);
+    }
+    .hero-card-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.10em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.45);
+      margin-bottom: 16px;
+    }
+    .jump-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .jump-list a {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 14px;
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.10);
+      border-radius: var(--radius-sm);
+      text-decoration: none;
+      color: rgba(255,255,255,0.85);
+      font-size: 14px;
+      font-weight: 500;
+      transition: background 0.15s;
+    }
+    .jump-list a:hover { background: rgba(255,255,255,0.13); }
+    .jump-list a .jump-num {
+      width: 24px; height: 24px;
+      background: var(--teal);
+      border-radius: 6px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 12px;
+      font-weight: 700;
+      color: #fff;
+      flex-shrink: 0;
+    }
+    .jump-list a.gold-jump .jump-num { background: var(--gold); }
+
+    /* ─── STATS BAR ─── */
+    .stats-bar {
+      border-bottom: 1px solid var(--border);
+      background: #fff;
+    }
+    .stats-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 28px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      divide-x: 1px solid var(--border);
+    }
+    .stat-item {
+      padding: 28px 24px;
+      border-right: 1px solid var(--border);
+    }
+    .stat-item:last-child { border-right: none; }
+    .stat-num {
+      font-size: 2rem;
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      color: var(--navy);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .stat-num.gold { color: var(--gold); }
+    .stat-label {
+      font-size: 13px;
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    /* ─── PAGE WRAPPER ─── */
+    .page {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 60px 28px 100px;
+    }
+
+    /* ─── SECTION HEADER ─── */
+    .section-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 14px;
+    }
+    .section-tag::before {
+      content: '';
+      width: 16px; height: 2px;
+      background: var(--teal);
+      border-radius: 2px;
+    }
+
+    h2 {
+      font-size: clamp(1.7rem, 2.8vw, 2.5rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      color: var(--navy);
+      margin-bottom: 14px;
+    }
+    h3 {
+      font-size: clamp(1.1rem, 1.6vw, 1.35rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--navy);
+      margin-bottom: 0;
+    }
+
+    .section-intro {
+      font-size: 15px;
+      color: var(--muted);
+      max-width: 65ch;
+      line-height: 1.75;
+      margin-bottom: 40px;
+    }
+
+    /* ─── PLAN SECTION ─── */
+    section { margin-bottom: 80px; }
+
+    /* feature cards */
+    .plan-grid { display: grid; gap: 16px; }
+
+    .plan-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+      box-shadow: var(--shadow-sm);
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .plan-card:hover {
+      box-shadow: var(--shadow);
+      transform: translateY(-2px);
+    }
+
+    .card-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 14px;
+    }
+
+    .card-kicker {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 6px;
+    }
+
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 5px 12px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 600;
+      white-space: nowrap;
+      background: var(--surface-2);
+      color: var(--muted);
+      border: 1px solid var(--border);
+    }
+    .status-badge.teal {
+      background: var(--teal-light);
+      color: var(--teal-dark);
+      border-color: var(--border-teal);
+    }
+    .status-badge.gold {
+      background: var(--gold-soft);
+      color: #7a5a17;
+      border-color: rgba(200,155,60,0.3);
+    }
+
+    .card-meta {
+      font-size: 14px;
+      color: var(--muted);
+      margin-bottom: 16px;
+      line-height: 1.6;
+    }
+
+    .link-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+    .link-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 11px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 600;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--navy);
+      text-decoration: none;
+      transition: background 0.15s;
+    }
+    .link-pill:hover { background: var(--teal-mid); }
+
+    .success-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .success-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 14px;
+      color: var(--text);
+    }
+    .success-list li::before {
+      content: '';
+      width: 18px; height: 18px;
+      background: var(--teal-light);
+      border-radius: 50%;
+      border: 1.5px solid var(--teal);
+      flex-shrink: 0;
+      margin-top: 2px;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='%231a7a72' d='M13 4.5L6.5 11 3 7.5' stroke='%231a7a72' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 11px;
+    }
+
+    /* collapsible */
+    details {
+      margin-top: 20px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+    }
+    summary {
+      cursor: pointer;
+      padding: 14px 18px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--navy);
+      list-style: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    summary::-webkit-details-marker { display: none; }
+    summary::after {
+      content: '+';
+      width: 22px; height: 22px;
+      background: var(--teal-light);
+      color: var(--teal);
+      border-radius: 6px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 1;
+      flex-shrink: 0;
+    }
+    details[open] summary::after { content: '–'; }
+
+    .details-body {
+      padding: 0 18px 18px;
+      border-top: 1px solid var(--border);
+      background: #fff;
+    }
+
+    .detail-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+      margin-top: 16px;
+    }
+
+    .detail-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 16px;
+    }
+    .detail-box h4 {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.10em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 10px;
+    }
+    .detail-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .detail-list li {
+      font-size: 13px;
+      color: var(--muted);
+      padding-left: 12px;
+      position: relative;
+    }
+    .detail-list li::before {
+      content: '·';
+      position: absolute;
+      left: 0;
+      color: var(--teal);
+      font-weight: 700;
+    }
+    .detail-list a { color: var(--teal); text-decoration: none; }
+    .detail-list a:hover { text-decoration: underline; }
+
+    /* ─── DARK SECTION (priority table) ─── */
+    .dark-section {
+      background: linear-gradient(135deg, #0d2e3e 0%, #163e52 100%);
+      border-radius: var(--radius-lg);
+      padding: 48px;
+      margin-bottom: 48px;
+      position: relative;
+      overflow: hidden;
+    }
+    .dark-section::before {
+      content: '';
+      position: absolute;
+      top: -40px; right: -40px;
+      width: 300px; height: 300px;
+      background: radial-gradient(circle, rgba(26,122,114,0.3) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .dark-section .section-tag { color: var(--gold); }
+    .dark-section .section-tag::before { background: var(--gold); }
+    .dark-section h2 { color: #fff; }
+    .dark-section .section-intro { color: rgba(255,255,255,0.60); }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: rgba(255,255,255,0.05);
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.10);
+    }
+    th {
+      text-align: left;
+      padding: 12px 20px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.10em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.45);
+      background: rgba(255,255,255,0.05);
+      border-bottom: 1px solid rgba(255,255,255,0.10);
+    }
+    td {
+      padding: 16px 20px;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+      font-size: 14px;
+      color: rgba(255,255,255,0.85);
+      vertical-align: middle;
+    }
+    tr:last-child td { border-bottom: none; }
+    tbody tr:hover { background: rgba(255,255,255,0.04); }
+    td a { color: #fff; font-weight: 500; text-decoration: none; }
+    td a:hover { text-decoration: underline; }
+
+    .priority-num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px; height: 28px;
+      background: rgba(255,255,255,0.10);
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 700;
+      color: rgba(255,255,255,0.75);
+    }
+    .priority-num.gold {
+      background: rgba(200,155,60,0.25);
+      color: var(--gold);
+    }
+
+    .rev-tag {
+      display: inline-flex;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 600;
+      background: rgba(255,255,255,0.08);
+      color: rgba(255,255,255,0.65);
+      white-space: nowrap;
+    }
+    .rev-tag.gold {
+      background: rgba(200,155,60,0.18);
+      color: var(--gold);
+    }
+
+    /* ─── PRIORITY CARDS ─── */
+    .priority-grid { display: grid; gap: 16px; }
+
+    .priority-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+      box-shadow: var(--shadow-sm);
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .priority-card:hover {
+      box-shadow: var(--shadow);
+      transform: translateY(-2px);
+    }
+    .priority-card.gold-card {
+      border-color: rgba(200,155,60,0.30);
+      background: linear-gradient(180deg, #fffdf8 0%, #fff 100%);
+    }
+
+    .priority-num-large {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px; height: 40px;
+      background: var(--teal-light);
+      border: 1.5px solid var(--border-teal);
+      border-radius: 12px;
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--teal);
+      flex-shrink: 0;
+    }
+    .priority-num-large.gold {
+      background: var(--gold-soft);
+      border-color: rgba(200,155,60,0.30);
+      color: var(--gold);
+    }
+
+    .priority-card-top {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    .priority-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+    }
+    .priority-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 14px;
+      color: var(--text);
+    }
+    .priority-list li::before {
+      content: '→';
+      color: var(--teal);
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 0px;
+    }
+    .priority-card.gold-card .priority-list li::before { color: var(--gold); }
+
+    /* ─── FOOTER NOTE ─── */
+    .footer-note {
+      background: var(--teal-light);
+      border: 1px solid var(--border-teal);
+      border-radius: var(--radius);
+      padding: 20px 24px;
+      font-size: 14px;
+      color: var(--teal-dark);
+      line-height: 1.7;
+      margin-top: 40px;
+    }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: var(--navy);
+      padding: 48px 28px;
+    }
+    .footer-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+    .footer-brand {
+      font-size: 15px;
+      font-weight: 700;
+      color: rgba(255,255,255,0.85);
+    }
+    .footer-links {
+      display: flex;
+      gap: 4px;
+      list-style: none;
+    }
+    .footer-links a {
+      padding: 6px 12px;
+      font-size: 13px;
+      color: rgba(255,255,255,0.50);
+      text-decoration: none;
+      border-radius: 6px;
+      transition: color 0.15s;
+    }
+    .footer-links a:hover { color: rgba(255,255,255,0.85); }
+    .footer-copy {
+      font-size: 12px;
+      color: rgba(255,255,255,0.30);
+    }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 900px) {
+      .hero-inner { grid-template-columns: 1fr; }
+      .hero-card { display: none; }
+      .stats-inner { grid-template-columns: 1fr; }
+      .stat-item { border-right: none; border-bottom: 1px solid var(--border); }
+      .detail-grid { grid-template-columns: 1fr; }
+      .dark-section { padding: 32px 24px; }
+    }
+
+    @media (max-width: 640px) {
+      .page { padding: 40px 16px 80px; }
+      nav .nav-links { display: none; }
+      table, thead, tbody, th, td, tr { display: block; }
+      thead { display: none; }
+      tr { border-bottom: 1px solid rgba(255,255,255,0.10); }
+      td { padding: 10px 16px; }
+      td::before {
+        content: attr(data-label);
+        display: block;
+        font-size: 11px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: rgba(255,255,255,0.40);
+        margin-bottom: 4px;
+        font-weight: 700;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">
+        <span>
+          <svg viewBox="0 0 16 16"><path d="M8 1.5C4.41 1.5 1.5 4.41 1.5 8S4.41 14.5 8 14.5 14.5 11.59 14.5 8 11.59 1.5 8 1.5zm0 2a4.5 4.5 0 110 9 4.5 4.5 0 010-9z" opacity=".4"/><circle cx="8" cy="8" r="2.5"/></svg>
+        </span>
+        Arts of Dreaming
+      </a>
+      <ul class="nav-links">
+        <li><a href="#product-plan">Product Plan</a></li>
+        <li><a href="#monetization-plan">Monetization</a></li>
+        <li><a href="#priority-table">Priority Table</a></li>
+        <li><a href="#priority-table" class="nav-cta">View Sequence ↓</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-inner">
+      <div>
+        <div class="hero-eyebrow">Arts of Dreaming</div>
+        <h1>Growth and <em>Monetization</em> Action Plan</h1>
+        <p class="hero-desc">A working plan you can share immediately with collaborators. First, a product action plan built around the core user journey and experience quality. Then, a monetization roadmap prioritized by speed to revenue, retention impact, and long-term customer value.</p>
+        <div class="hero-actions">
+          <a href="#product-plan" class="btn btn-primary">Product Plan →</a>
+          <a href="#monetization-plan" class="btn btn-ghost">Monetization Sequence</a>
+        </div>
+      </div>
+      <div class="hero-card">
+        <div class="hero-card-label">Jump to section</div>
+        <ul class="jump-list">
+          <li><a href="#product-plan"><span class="jump-num">1</span> Product action plan</a></li>
+          <li><a href="#monetization-plan"><span class="jump-num">2</span> Priority monetization plan</a></li>
+          <li><a href="#priority-table" class="gold-jump"><span class="jump-num gold">★</span> Priority revenue table</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- STATS BAR -->
+  <div class="stats-bar">
+    <div class="stats-inner">
+      <div class="stat-item">
+        <div class="stat-num">6</div>
+        <div class="stat-label">Core product features</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">9</div>
+        <div class="stat-label">Monetization priorities</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num gold">1</div>
+        <div class="stat-label">Archetype report — build this first</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <div class="page">
+
+    <!-- ── PLAN ONE: PRODUCT ── -->
+    <section id="product-plan">
+      <div class="section-tag">Plan one</div>
+      <h2>Product action plan</h2>
+      <p class="section-intro">This plan recreates the original structure as a clear action framework for improving the app experience, validating the core journey, and preparing the product to support meaningful monetization. The sequence follows the user path from access to insight, so downstream features can inherit trust, clarity, and usability from upstream improvements.</p>
+
+      <div class="plan-grid">
+
+        <!-- Feature 1 -->
+        <article class="plan-card" id="auth">
+          <div class="card-top">
+            <div>
+              <div class="card-kicker">Feature 1</div>
+              <h3>Authentication</h3>
+            </div>
+            <span class="status-badge teal">Foundation</span>
+          </div>
+          <p class="card-meta">Goal: Make sign-in feel trustworthy, fast, and predictable so every downstream experience starts cleanly.</p>
+          <div class="link-row">
+            <a href="#app-shell" class="link-pill">→ Unlocks App shell</a>
+            <a href="#journal" class="link-pill">→ Unlocks Dream journal</a>
+          </div>
+          <ul class="success-list">
+            <li>Google sign-in works without redirect confusion or dead-end states.</li>
+            <li>Authenticated users land in the right place after login.</li>
+            <li>Sign-out and return sessions behave consistently.</li>
+          </ul>
+          <details>
+            <summary>Review details</summary>
+            <div class="details-body">
+              <div class="detail-grid">
+                <div class="detail-box">
+                  <h4>Tasks</h4>
+                  <ul class="detail-list">
+                    <li>Validate Google sign-in, redirect, logout, and refresh flows.</li>
+                    <li>Add clear loading and error states for failed authentication.</li>
+                    <li>Confirm returning users bypass unnecessary friction.</li>
+                  </ul>
+                </div>
+                <div class="detail-box">
+                  <h4>Dependencies</h4>
+                  <ul class="detail-list">
+                    <li>No upstream dependencies.</li>
+                    <li>Required before protected content and personalized states.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </details>
+        </article>
+
+        <!-- Feature 2 -->
+        <article class="plan-card" id="app-shell">
+          <div class="card-top">
+            <div>
+              <div class="card-kicker">Feature 2</div>
+              <h3>App shell and navigation</h3>
+            </div>
+            <span class="status-badge">Core UX</span>
+          </div>
+          <p class="card-meta">Goal: Make the site easy to orient within, so dream, assessment, and report flows feel connected rather than fragmented.</p>
+          <div class="link-row">
+            <a href="#auth" class="link-pill">← Depends on Auth</a>
+            <a href="#journal" class="link-pill">→ Next: Dream journal</a>
+            <a href="#assessment" class="link-pill">→ Next: Assessment</a>
+          </div>
+          <ul class="success-list">
+            <li>Primary destinations are immediately understandable.</li>
+            <li>Navigation labels match the user's mental model.</li>
+            <li>Users can move between journal, assessment, and report with confidence.</li>
+          </ul>
+          <details>
+            <summary>Review details</summary>
+            <div class="details-body">
+              <div class="detail-grid">
+                <div class="detail-box">
+                  <h4>Tasks</h4>
+                  <ul class="detail-list">
+                    <li>Audit current nav labels and route destinations.</li>
+                    <li>Clarify hierarchy between dashboard, dream journal, Dream Sensei, and reports.</li>
+                    <li>Add active-state visibility and better empty-state orientation.</li>
+                  </ul>
+                </div>
+                <div class="detail-box">
+                  <h4>Why it matters</h4>
+                  <ul class="detail-list">
+                    <li>Clear orientation improves conversion because users understand where value lives.</li>
+                    <li>Better flow reduces drop-off before monetized moments appear.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </details>
+        </article>
+
+        <!-- Feature 3 -->
+        <article class="plan-card" id="journal">
+          <div class="card-top">
+            <div>
+              <div class="card-kicker">Feature 3</div>
+              <h3>Dream journal</h3>
+            </div>
+            <span class="status-badge">Engagement</span>
+          </div>
+          <p class="card-meta">Goal: Make journaling feel easy, reflective, and worth returning to.</p>
+          <div class="link-row">
+            <a href="#app-shell" class="link-pill">← Depends on App shell</a>
+            <a href="#monetization-plan" class="link-pill">→ Feeds Journal Pro upgrade</a>
+          </div>
+          <ul class="success-list">
+            <li>Users can create, revisit, and meaningfully engage with dream entries.</li>
+            <li>Entry creation feels fluid on desktop and mobile.</li>
+            <li>The journal visibly supports the broader dream journey.</li>
+          </ul>
+          <details>
+            <summary>Review details</summary>
+            <div class="details-body">
+              <div class="detail-grid">
+                <div class="detail-box">
+                  <h4>Tasks</h4>
+                  <ul class="detail-list">
+                    <li>Test create, edit, save, refresh, and delete behaviors.</li>
+                    <li>Improve empty states and prompts for first-time use.</li>
+                    <li>Clarify how journal entries connect to insights and future premium features.</li>
+                  </ul>
+                </div>
+                <div class="detail-box">
+                  <h4>Open questions</h4>
+                  <ul class="detail-list">
+                    <li>What should be free forever versus part of Journal Pro?</li>
+                    <li>How much guidance belongs in the entry flow without slowing it down?</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </details>
+        </article>
+
+        <!-- Feature 4 -->
+        <article class="plan-card" id="assessment">
+          <div class="card-top">
+            <div>
+              <div class="card-kicker">Feature 4</div>
+              <h3>Dreamer type assessment</h3>
+            </div>
+            <span class="status-badge">Identity layer</span>
+          </div>
+          <p class="card-meta">Goal: Make the assessment feel like a meaningful initiation that produces a believable archetypal result.</p>
+          <div class="link-row">
+            <a href="#app-shell" class="link-pill">← Depends on App shell</a>
+            <a href="#report" class="link-pill">→ Unlocks Archetype report</a>
+            <a href="#priority-table" class="link-pill">→ Feeds Physical deck CTA</a>
+          </div>
+          <ul class="success-list">
+            <li>The assessment is easy to complete and emotionally satisfying.</li>
+            <li>Results feel coherent and personalized.</li>
+            <li>Completion naturally opens the door to the report and next-step offers.</li>
+          </ul>
+          <details>
+            <summary>Review details</summary>
+            <div class="details-body">
+              <div class="detail-grid">
+                <div class="detail-box">
+                  <h4>Tasks</h4>
+                  <ul class="detail-list">
+                    <li>Review question flow, pacing, and progress visibility.</li>
+                    <li>Test retake behavior and result consistency.</li>
+                    <li>Add transitional messaging from assessment into final report.</li>
+                  </ul>
+                </div>
+                <div class="detail-box">
+                  <h4>Business relevance</h4>
+                  <ul class="detail-list">
+                    <li>The archetype result is a natural bridge to product offers, email capture, and social sharing.</li>
+                    <li>This is one of the strongest identity-based monetization surfaces.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </details>
+        </article>
+
+        <!-- Feature 5 -->
+        <article class="plan-card" id="report">
+          <div class="card-top">
+            <div>
+              <div class="card-kicker">Feature 5</div>
+              <h3>Archetype report</h3>
+            </div>
+            <span class="status-badge gold">Conversion moment</span>
+          </div>
+          <p class="card-meta">Goal: Turn the result page into a deeply shareable and revenue-ready destination.</p>
+          <div class="link-row">
+            <a href="#assessment" class="link-pill">← Depends on Assessment</a>
+            <a href="#monetization-plan" class="link-pill">→ Feeds Deck CTA, email, share</a>
+          </div>
+          <ul class="success-list">
+            <li>The report feels premium, legible, and emotionally resonant.</li>
+            <li>There is a clear next action rather than a passive ending.</li>
+            <li>The page supports sharing, saving, or buying without breaking tone.</li>
+          </ul>
+          <details>
+            <summary>Review details</summary>
+            <div class="details-body">
+              <div class="detail-grid">
+                <div class="detail-box">
+                  <h4>Tasks</h4>
+                  <ul class="detail-list">
+                    <li>Add clear post-report calls to action.</li>
+                    <li>Structure the report for skim + depth, not only long-form reading.</li>
+                    <li>Introduce deck, email, and social options as aligned extensions of the reading.</li>
+                  </ul>
+                </div>
+                <div class="detail-box">
+                  <h4>Key metric</h4>
+                  <ul class="detail-list">
+                    <li>Percentage of completed assessments that continue into a next action.</li>
+                    <li>Track CTA clicks, shares, and email capture from this screen.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </details>
+        </article>
+
+        <!-- Feature 6 -->
+        <article class="plan-card" id="settings">
+          <div class="card-top">
+            <div>
+              <div class="card-kicker">Feature 6</div>
+              <h3>Settings and profile</h3>
+            </div>
+            <span class="status-badge">Trust</span>
+          </div>
+          <p class="card-meta">Goal: Give users confidence in account control, preferences, and future subscription management.</p>
+          <div class="link-row">
+            <a href="#auth" class="link-pill">← Depends on Auth</a>
+            <a href="#monetization-plan" class="link-pill">→ Supports Subscription offers</a>
+          </div>
+          <ul class="success-list">
+            <li>Users understand what data and preferences they control.</li>
+            <li>Subscription-ready settings can be added without confusion later.</li>
+            <li>Profile data supports personalization across the experience.</li>
+          </ul>
+          <details>
+            <summary>Review details</summary>
+            <div class="details-body">
+              <div class="detail-grid">
+                <div class="detail-box">
+                  <h4>Tasks</h4>
+                  <ul class="detail-list">
+                    <li>Clarify profile, notifications, and saved content controls.</li>
+                    <li>Prepare billing and premium-state placeholders even if subscriptions are not live.</li>
+                    <li>Reduce ambiguity around account ownership and user history.</li>
+                  </ul>
+                </div>
+                <div class="detail-box">
+                  <h4>Later use</h4>
+                  <ul class="detail-list">
+                    <li>This becomes essential when recurring products launch.</li>
+                    <li>It also supports retention through personalization and communication preferences.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </details>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ── PLAN TWO: MONETIZATION ── -->
+    <section id="monetization-plan">
+      <div class="section-tag">Plan two</div>
+      <h2>Priority monetization and business growth plan</h2>
+      <p class="section-intro">Monetization and growth actions in the exact priority order. The sequence starts with the simplest, highest-intent revenue opportunities closest to the archetype result, then expands into retention loops, recurring offers, and higher-lifetime-value bundles.</p>
+
+      <!-- PRIORITY TABLE (dark) -->
+      <div class="dark-section" id="priority-table">
+        <div class="section-tag">Priority overview</div>
+        <h2>Revenue sequence</h2>
+        <p class="section-intro">9 monetization moves, ordered by speed to revenue and strategic importance.</p>
+        <table>
+          <thead>
+            <tr>
+              <th>Priority</th>
+              <th>Feature</th>
+              <th>Revenue type</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td data-label="Priority"><span class="priority-num gold">1</span></td>
+              <td data-label="Feature"><a href="#m1">Archetype → Physical Deck CTA</a></td>
+              <td data-label="Revenue type"><span class="rev-tag gold">Direct product sale</span></td>
+            </tr>
+            <tr>
+              <td data-label="Priority"><span class="priority-num">2</span></td>
+              <td data-label="Feature"><a href="#m2">Email nurture sequence</a></td>
+              <td data-label="Revenue type"><span class="rev-tag">Conversion pipeline</span></td>
+            </tr>
+            <tr>
+              <td data-label="Priority"><span class="priority-num gold">3</span></td>
+              <td data-label="Feature"><a href="#m3">Dream Sensei freemium gate</a></td>
+              <td data-label="Revenue type"><span class="rev-tag gold">Recurring subscription</span></td>
+            </tr>
+            <tr>
+              <td data-label="Priority"><span class="priority-num">4</span></td>
+              <td data-label="Feature"><a href="#m4">Social share card for archetype</a></td>
+              <td data-label="Revenue type"><span class="rev-tag">Organic growth / virality</span></td>
+            </tr>
+            <tr>
+              <td data-label="Priority"><span class="priority-num">5</span></td>
+              <td data-label="Feature"><a href="#m5">Daily card pull mechanic</a></td>
+              <td data-label="Revenue type"><span class="rev-tag">Retention / re-engagement</span></td>
+            </tr>
+            <tr>
+              <td data-label="Priority"><span class="priority-num gold">6</span></td>
+              <td data-label="Feature"><a href="#m6">Journal Pro upgrade</a></td>
+              <td data-label="Revenue type"><span class="rev-tag gold">Recurring subscription</span></td>
+            </tr>
+            <tr>
+              <td data-label="Priority"><span class="priority-num">7</span></td>
+              <td data-label="Feature"><a href="#m7">Streak system</a></td>
+              <td data-label="Revenue type"><span class="rev-tag">Retention</span></td>
+            </tr>
+            <tr>
+              <td data-label="Priority"><span class="priority-num">8</span></td>
+              <td data-label="Feature"><a href="#m8">Courses per archetype</a></td>
+              <td data-label="Revenue type"><span class="rev-tag">One-time digital product</span></td>
+            </tr>
+            <tr>
+              <td data-label="Priority"><span class="priority-num gold">9</span></td>
+              <td data-label="Feature"><a href="#m9">Annual membership bundle</a></td>
+              <td data-label="Revenue type"><span class="rev-tag gold">Highest LTV</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- PRIORITY CARDS -->
+      <div class="priority-grid">
+
+        <!-- P1 -->
+        <article class="priority-card gold-card" id="m1">
+          <div class="priority-card-top">
+            <div class="priority-num-large gold">1</div>
+            <div>
+              <div class="card-kicker">Priority 1 — Direct product sale</div>
+              <h3>Archetype → Physical Deck CTA</h3>
+            </div>
+            <span class="status-badge gold" style="margin-left:auto;">Direct sale</span>
+          </div>
+          <p class="card-meta">Place the first monetization moment directly after the archetype result, where emotional resonance and identity are strongest.</p>
+          <ul class="priority-list">
+            <li>Add a context-aware CTA on the archetype report that positions the physical deck as the embodied companion to the user's archetype.</li>
+            <li>Create specific messaging variants for each archetype so the deck feels chosen, not generically sold.</li>
+            <li>Measure click-through rate, add-to-cart rate, and purchase rate from the report page.</li>
+          </ul>
+          <details>
+            <summary>Implementation details</summary>
+            <div class="details-body">
+              <div class="detail-grid">
+                <div class="detail-box">
+                  <h4>Depends on</h4>
+                  <ul class="detail-list">
+                    <li><a href="#report">Archetype report</a></li>
+                    <li>Clean purchase path and product page clarity</li>
+                  </ul>
+                </div>
+                <div class="detail-box">
+                  <h4>Execution notes</h4>
+                  <ul class="detail-list">
+                    <li>Use gold accent only around the deck CTA zone.</li>
+                    <li>Make the offer feel devotional, tactile, and identity-matched.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </details>
+        </article>
+
+        <!-- P2 -->
+        <article class="priority-card" id="m2">
+          <div class="priority-card-top">
+            <div class="priority-num-large">2</div>
+            <div>
+              <div class="card-kicker">Priority 2 — Conversion pipeline</div>
+              <h3>Email nurture sequence</h3>
+            </div>
+            <span class="status-badge" style="margin-left:auto;">Pipeline</span>
+          </div>
+          <p class="card-meta">Capture interest from users who are not ready to buy immediately, then continue the archetype conversation over time.</p>
+          <ul class="priority-list">
+            <li>Add email capture after result delivery and at key reflective moments.</li>
+            <li>Build a sequence that introduces archetype meaning, dream practice, deck relevance, and premium next steps.</li>
+            <li>Segment by archetype so follow-up feels personal and not mass-market.</li>
+          </ul>
+          <details>
+            <summary>Implementation details</summary>
+            <div class="details-body">
+              <div class="detail-grid">
+                <div class="detail-box">
+                  <h4>Depends on</h4>
+                  <ul class="detail-list">
+                    <li><a href="#assessment">Assessment completion</a></li>
+                    <li><a href="#report">Archetype report</a></li>
+                  </ul>
+                </div>
+                <div class="detail-box">
+                  <h4>Suggested sequence</h4>
+                  <ul class="detail-list">
+                    <li>Email 1: Your archetype reading</li>
+                    <li>Email 2: How to work with this archetype</li>
+                    <li>Email 3: Deck invitation</li>
+                    <li>Email 4: Dream Sensei / Journal Pro teaser</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </details>
+        </article>
+
+        <!-- P3 -->
+        <article class="priority-card gold-card" id="m3">
+          <div class="priority-card-top">
+            <div class="priority-num-large gold">3</div>
+            <div>
+              <div class="card-kicker">Priority 3 — Recurring subscription</div>
+              <h3>Dream Sensei freemium gate</h3>
+            </div>
+            <span class="status-badge gold" style="margin-left:auto;">Subscription</span>
+          </div>
+          <p class="card-meta">Offer enough value for users to trust the feature, then gate deeper guidance, history, or premium interpretation behind subscription.</p>
+          <ul class="priority-list">
+            <li>Define a generous free layer and a clear premium threshold.</li>
+            <li>Position premium Dream Sensei as ongoing mentorship rather than locked content.</li>
+            <li>Use moments of demonstrated value before showing upgrade prompts.</li>
+          </ul>
+          <details>
+            <summary>Implementation details</summary>
+            <div class="details-body">
+              <div class="detail-grid">
+                <div class="detail-box">
+                  <h4>Depends on</h4>
+                  <ul class="detail-list">
+                    <li><a href="#app-shell">Navigation clarity</a></li>
+                    <li>Premium state handling in settings/billing</li>
+                  </ul>
+                </div>
+                <div class="detail-box">
+                  <h4>Premium ideas</h4>
+                  <ul class="detail-list">
+                    <li>Longer interpretations</li>
+                    <li>History and saved readings</li>
+                    <li>Advanced prompts and recurring guidance</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </details>
+        </article>
+
+        <!-- P4 -->
+        <article class="priority-card" id="m4">
+          <div class="priority-card-top">
+            <div class="priority-num-large">4</div>
+            <div>
+              <div class="card-kicker">Priority 4 — Organic growth</div>
+              <h3>Social share card for archetype</h3>
+            </div>
+            <span class="status-badge" style="margin-left:auto;">Virality</span>
+          </div>
+          <p class="card-meta">Turn identity into distribution by making the archetype result beautiful and easy to share.</p>
+          <ul class="priority-list">
+            <li>Create visual share cards per archetype with a short line of personalized language.</li>
+            <li>Add one-click sharing and copy-link options from the report page.</li>
+            <li>Ensure shared cards route new visitors into the assessment flow.</li>
+          </ul>
+          <details>
+            <summary>Implementation details</summary>
+            <div class="details-body">
+              <div class="detail-grid">
+                <div class="detail-box">
+                  <h4>Depends on</h4>
+                  <ul class="detail-list">
+                    <li><a href="#report">Archetype report polish</a></li>
+                    <li>Distinct archetype identity language</li>
+                  </ul>
+                </div>
+                <div class="detail-box">
+                  <h4>Growth focus</h4>
+                  <ul class="detail-list">
+                    <li>Design for Instagram story, square post, and link preview formats.</li>
+                    <li>Track share rate and downstream assessment starts.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </details>
+        </article>
+
+        <!-- P5 -->
+        <article class="priority-card" id="m5">
+          <div class="priority-card-top">
+            <div class="priority-num-large">5</div>
+            <div>
+              <div class="card-kicker">Priority 5 — Retention</div>
+              <h3>Daily card pull mechanic</h3>
+            </div>
+            <span class="status-badge" style="margin-left:auto;">Re-engagement</span>
+          </div>
+          <p class="card-meta">Give users a simple daily ritual that keeps the site alive between larger milestone experiences.</p>
+          <ul class="priority-list">
+            <li>Introduce a once-per-day card draw connected to the dream journey.</li>
+            <li>Use the mechanic to create habit, increase revisit frequency, and support later premium upsells.</li>
+            <li>Connect daily pulls to deck desire, streaks, and email reminders.</li>
+          </ul>
+          <details>
+            <summary>Implementation details</summary>
+            <div class="details-body">
+              <div class="detail-grid">
+                <div class="detail-box">
+                  <h4>Depends on</h4>
+                  <ul class="detail-list">
+                    <li>Lightweight home/dashboard return point</li>
+                    <li>Basic user history state</li>
+                  </ul>
+                </div>
+                <div class="detail-box">
+                  <h4>Business role</h4>
+                  <ul class="detail-list">
+                    <li>Improves retention before asking for bigger commitment.</li>
+                    <li>Creates repeated surfaces for premium invitations.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </details>
+        </article>
+
+        <!-- P6 -->
+        <article class="priority-card gold-card" id="m6">
+          <div class="priority-card-top">
+            <div class="priority-num-large gold">6</div>
+            <div>
+              <div class="card-kicker">Priority 6 — Recurring subscription</div>
+              <h3>Journal Pro upgrade</h3>
+            </div>
+            <span class="status-badge gold" style="margin-left:auto;">Subscription</span>
+          </div>
+          <p class="card-meta">Upgrade the journal from a simple archive into a premium practice space with deeper tools, analysis, and continuity.</p>
+          <ul class="priority-list">
+            <li>Reserve premium value for pattern detection, extended prompts, dream tagging, archives, and deeper reflection tools.</li>
+            <li>Introduce the upgrade only after free journaling value has been experienced.</li>
+            <li>Position Journal Pro as the serious practitioner path.</li>
+          </ul>
+          <details>
+            <summary>Implementation details</summary>
+            <div class="details-body">
+              <div class="detail-grid">
+                <div class="detail-box">
+                  <h4>Depends on</h4>
+                  <ul class="detail-list">
+                    <li><a href="#journal">Dream journal quality</a></li>
+                    <li>Billing-ready settings and premium state UX</li>
+                  </ul>
+                </div>
+                <div class="detail-box">
+                  <h4>Upsell moments</h4>
+                  <ul class="detail-list">
+                    <li>After several journal entries</li>
+                    <li>When pattern visibility becomes desirable</li>
+                    <li>When users want deeper dream history</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </details>
+        </article>
+
+        <!-- P7 -->
+        <article class="priority-card" id="m7">
+          <div class="priority-card-top">
+            <div class="priority-num-large">7</div>
+            <div>
+              <div class="card-kicker">Priority 7 — Retention</div>
+              <h3>Streak system</h3>
+            </div>
+            <span class="status-badge" style="margin-left:auto;">Retention</span>
+          </div>
+          <p class="card-meta">Use streaks carefully to support ritual and consistency without making the experience feel gamified in a shallow way.</p>
+          <ul class="priority-list">
+            <li>Reward return behavior across journal use, daily pulls, or dream practice actions.</li>
+            <li>Keep the language devotional or reflective rather than aggressively productivity-based.</li>
+            <li>Use streak loss prevention messaging gently and sparingly.</li>
+          </ul>
+          <details>
+            <summary>Implementation details</summary>
+            <div class="details-body">
+              <div class="detail-grid">
+                <div class="detail-box">
+                  <h4>Depends on</h4>
+                  <ul class="detail-list">
+                    <li><a href="#m5">Daily card pull mechanic</a></li>
+                    <li><a href="#journal">Journal usage consistency</a></li>
+                  </ul>
+                </div>
+                <div class="detail-box">
+                  <h4>Best use</h4>
+                  <ul class="detail-list">
+                    <li>Support retention, not primary monetization.</li>
+                    <li>Use as a bridge into premium habit-based products later.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </details>
+        </article>
+
+        <!-- P8 -->
+        <article class="priority-card" id="m8">
+          <div class="priority-card-top">
+            <div class="priority-num-large">8</div>
+            <div>
+              <div class="card-kicker">Priority 8 — Digital product</div>
+              <h3>Courses per archetype</h3>
+            </div>
+            <span class="status-badge" style="margin-left:auto;">One-time</span>
+          </div>
+          <p class="card-meta">Create deeper paid learning paths tailored to a user's archetype once identity trust and engagement are already established.</p>
+          <ul class="priority-list">
+            <li>Design one course framework, then adapt modules per archetype.</li>
+            <li>Position courses as transformational deep dives rather than informational content bundles.</li>
+            <li>Sell from email, report pages, and premium user journeys.</li>
+          </ul>
+          <details>
+            <summary>Implementation details</summary>
+            <div class="details-body">
+              <div class="detail-grid">
+                <div class="detail-box">
+                  <h4>Depends on</h4>
+                  <ul class="detail-list">
+                    <li><a href="#m2">Email nurture</a></li>
+                    <li>Clarity around archetype-based curriculum</li>
+                  </ul>
+                </div>
+                <div class="detail-box">
+                  <h4>Offer strategy</h4>
+                  <ul class="detail-list">
+                    <li>Use one-time purchase first.</li>
+                    <li>Later include inside membership for added perceived value.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </details>
+        </article>
+
+        <!-- P9 -->
+        <article class="priority-card gold-card" id="m9">
+          <div class="priority-card-top">
+            <div class="priority-num-large gold">9</div>
+            <div>
+              <div class="card-kicker">Priority 9 — Highest LTV</div>
+              <h3>Annual membership bundle</h3>
+            </div>
+            <span class="status-badge gold" style="margin-left:auto;">Highest LTV</span>
+          </div>
+          <p class="card-meta">Build the highest-value offer only after the component products are proven and legible on their own.</p>
+          <ul class="priority-list">
+            <li>Bundle Dream Sensei, Journal Pro, daily practice tools, courses, and exclusive member benefits into one coherent annual path.</li>
+            <li>Position membership as the fullest way to live inside the Arts of Dreaming ecosystem.</li>
+            <li>Use this as the premium apex offer for your most engaged users.</li>
+          </ul>
+          <details>
+            <summary>Implementation details</summary>
+            <div class="details-body">
+              <div class="detail-grid">
+                <div class="detail-box">
+                  <h4>Depends on</h4>
+                  <ul class="detail-list">
+                    <li><a href="#m3">Dream Sensei subscription</a></li>
+                    <li><a href="#m6">Journal Pro</a></li>
+                    <li><a href="#m8">Courses</a></li>
+                  </ul>
+                </div>
+                <div class="detail-box">
+                  <h4>Launch condition</h4>
+                  <ul class="detail-list">
+                    <li>Only launch once the component offers already convert independently.</li>
+                    <li>Bundle should simplify decisions, not hide unclear product architecture.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </details>
+        </article>
+
+      </div>
+
+      <div class="footer-note">
+        Recommended execution order: build and polish the archetype report first, because it powers the deck CTA, email capture, and social sharing. Then move into recurring revenue with Dream Sensei and Journal Pro after the core retention loop is in place.
+      </div>
+    </section>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">Arts of Dreaming</div>
+      <ul class="footer-links">
+        <li><a href="#product-plan">Product Plan</a></li>
+        <li><a href="#monetization-plan">Monetization</a></li>
+        <li><a href="#priority-table">Priority Table</a></li>
+      </ul>
+      <div class="footer-copy">© Arts of Dreaming 2026. All rights reserved.</div>
+    </div>
+  </footer>
+
+</body>
+</html>
