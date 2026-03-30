@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Arts of Dreaming — Email Marketing Plan</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #06121f;
+      --navy-mid: #0d1e30;
+      --teal: #2e90b8;
+      --teal-dark: #246f8f;
+      --teal-light: #e6f4f9;
+      --teal-mid: #a8d8ec;
+      --gold: #c9a847;
+      --gold-soft: #fdf7e8;
+      --text: #06121f;
+      --muted: #4a5f72;
+      --faint: #8aa0b0;
+      --border: rgba(6, 18, 31, 0.10);
+      --border-teal: rgba(46, 144, 184, 0.22);
+      --bg: #ffffff;
+      --surface: #f6fafc;
+      --surface-2: #eef6f9;
+      --shadow-sm: 0 2px 8px rgba(6, 18, 31, 0.07);
+      --shadow: 0 8px 32px rgba(6, 18, 31, 0.10);
+      --radius: 16px;
+      --radius-sm: 10px;
+      --radius-lg: 24px;
+      --max: 1100px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--bg); line-height: 1.6; font-size: 15px; }
+
+    /* ─── NAV ─── */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(255,255,255,0.94); backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner {
+      max-width: var(--max); margin: 0 auto; padding: 0 28px;
+      height: 64px; display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    }
+    .nav-logo {
+      font-weight: 800; font-size: 17px; color: var(--navy);
+      letter-spacing: -0.02em; display: flex; align-items: center; gap: 8px; text-decoration: none; flex-shrink: 0;
+    }
+    .nav-logo-icon { width: 30px; height: 30px; background: var(--teal); border-radius: 8px; display: flex; align-items: center; justify-content: center; }
+    .nav-logo-icon svg { width: 16px; height: 16px; fill: #fff; }
+    .nav-links { display: flex; gap: 4px; list-style: none; }
+    .nav-links a { padding: 6px 12px; font-size: 13px; font-weight: 500; color: var(--muted); text-decoration: none; border-radius: 8px; transition: background 0.15s, color 0.15s; }
+    .nav-links a:hover { background: var(--surface); color: var(--text); }
+    .nav-back { display: inline-flex; align-items: center; gap: 6px; padding: 7px 14px; border-radius: 999px; font-size: 13px; font-weight: 600; color: var(--navy); text-decoration: none; border: 1px solid var(--border); transition: background 0.15s; }
+    .nav-back:hover { background: var(--surface); }
+
+    .author-wrap { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
+    .author-label { font-size: 12px; color: var(--faint); font-weight: 500; white-space: nowrap; }
+    .author-input { border: 1px solid var(--border); border-radius: 999px; padding: 6px 14px; font-size: 13px; font-family: inherit; color: var(--text); outline: none; width: 150px; transition: border-color 0.15s; background: var(--surface); }
+    .author-input:focus { border-color: var(--teal); background: #fff; }
+    .author-input.shake { animation: shake 0.35s; border-color: #e53e3e !important; }
+    @keyframes shake { 0%,100%{transform:translateX(0)} 20%,60%{transform:translateX(-4px)} 40%,80%{transform:translateX(4px)} }
+
+    /* ─── HERO ─── */
+    .hero { background: #06121f; padding: 72px 28px 88px; position: relative; overflow: hidden; }
+    .hero::before { content:''; position:absolute; top:-60px; right:-60px; width:500px; height:500px; background:radial-gradient(circle,rgba(46,144,184,0.18) 0%,transparent 70%); pointer-events:none; }
+    .hero-inner { max-width: var(--max); margin: 0 auto; display: grid; grid-template-columns: 1fr 340px; gap: 48px; align-items: center; position: relative; z-index: 1; }
+    .hero-eyebrow { display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.10); border: 1px solid rgba(255,255,255,0.15); border-radius: 999px; padding: 6px 14px; font-size: 12px; font-weight: 600; letter-spacing: 0.10em; text-transform: uppercase; color: rgba(255,255,255,0.75); margin-bottom: 24px; }
+    .hero-eyebrow::before { content:''; width:6px; height:6px; background:var(--gold); border-radius:50%; }
+    .hero h1 { font-size: clamp(2rem, 3.8vw, 3.4rem); font-weight: 800; line-height: 1.08; letter-spacing: -0.03em; color: #fff; margin-bottom: 18px; }
+    .hero h1 em { font-style: normal; color: var(--gold); }
+    .hero-desc { color: rgba(255,255,255,0.65); font-size: 15px; line-height: 1.75; max-width: 52ch; margin-bottom: 32px; }
+    .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 11px 22px; border-radius: 999px; font-weight: 600; font-size: 14px; text-decoration: none; transition: all 0.15s; cursor: pointer; border: none; font-family: inherit; }
+    .btn-primary { background: var(--teal); color: #fff; }
+    .btn-primary:hover { background: var(--teal-dark); }
+    .btn-ghost { background: rgba(255,255,255,0.10); border: 1px solid rgba(255,255,255,0.20); color: #fff; }
+    .btn-ghost:hover { background: rgba(255,255,255,0.18); }
+
+    .hero-card { background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12); border-radius: var(--radius-lg); padding: 24px; backdrop-filter: blur(8px); }
+    .hero-card-label { font-size: 11px; font-weight: 700; letter-spacing: 0.10em; text-transform: uppercase; color: rgba(255,255,255,0.45); margin-bottom: 12px; }
+    .campaign-index { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+    .campaign-index a { display: flex; align-items: center; gap: 10px; padding: 9px 12px; background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.10); border-radius: var(--radius-sm); text-decoration: none; color: rgba(255,255,255,0.82); font-size: 13px; font-weight: 500; transition: background 0.15s; }
+    .campaign-index a:hover { background: rgba(255,255,255,0.13); }
+    .ci-num { width: 22px; height: 22px; background: var(--teal); border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; color: #fff; flex-shrink: 0; }
+    .ci-num.gold { background: var(--gold); }
+
+    /* ─── STATS ─── */
+    .stats-bar { border-bottom: 1px solid var(--border); }
+    .stats-inner { max-width: var(--max); margin: 0 auto; padding: 0 28px; display: grid; grid-template-columns: repeat(4,1fr); }
+    .stat-item { padding: 24px; border-right: 1px solid var(--border); }
+    .stat-item:last-child { border-right: none; }
+    .stat-num { font-size: 1.8rem; font-weight: 800; letter-spacing: -0.04em; color: var(--navy); line-height: 1; margin-bottom: 4px; }
+    .stat-num.teal { color: var(--teal); }
+    .stat-num.gold { color: var(--gold); }
+    .stat-label { font-size: 13px; color: var(--muted); font-weight: 500; }
+
+    /* ─── LAYOUT ─── */
+    .page { max-width: var(--max); margin: 0 auto; padding: 60px 28px 100px; }
+    section { margin-bottom: 72px; }
+    .section-tag { display: inline-flex; align-items: center; gap: 6px; font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--teal); margin-bottom: 14px; }
+    .section-tag::before { content:''; width:16px; height:2px; background:var(--teal); border-radius:2px; }
+    .section-tag.gold { color: var(--gold); }
+    .section-tag.gold::before { background: var(--gold); }
+    h2 { font-size: clamp(1.6rem, 2.6vw, 2.3rem); font-weight: 800; letter-spacing: -0.03em; line-height: 1.1; color: var(--navy); margin-bottom: 12px; }
+    h3 { font-size: clamp(1rem, 1.4vw, 1.2rem); font-weight: 700; letter-spacing: -0.02em; color: var(--navy); }
+    .section-intro { font-size: 15px; color: var(--muted); max-width: 65ch; line-height: 1.75; margin-bottom: 36px; }
+
+    /* ─── SETUP CARD ─── */
+    .setup-card { background: #06121f; border-radius: var(--radius-lg); padding: 36px; margin-bottom: 48px; position: relative; overflow: hidden; }
+    .setup-card::before { content:''; position:absolute; top:-30px; right:-30px; width:200px; height:200px; background:radial-gradient(circle,rgba(201,168,71,0.15) 0%,transparent 70%); pointer-events:none; }
+    .setup-card .section-tag { color: var(--gold); }
+    .setup-card .section-tag::before { background: var(--gold); }
+    .setup-card h2 { color: #fff; }
+    .setup-card p { color: rgba(255,255,255,0.60); font-size: 14px; margin-bottom: 24px; max-width: 60ch; line-height: 1.7; }
+    .setup-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 16px; position: relative; z-index: 1; }
+    .setup-box { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.10); border-radius: var(--radius-sm); padding: 18px; }
+    .setup-box h4 { font-size: 11px; font-weight: 700; letter-spacing: 0.10em; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
+    .setup-table { width: 100%; border-collapse: collapse; }
+    .setup-table th { font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.40); padding: 6px 0; text-align: left; border-bottom: 1px solid rgba(255,255,255,0.10); }
+    .setup-table td { font-size: 13px; color: rgba(255,255,255,0.80); padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.06); vertical-align: top; }
+    .setup-table tr:last-child td { border-bottom: none; }
+    .setup-table td:first-child { font-weight: 600; color: rgba(255,255,255,0.95); padding-right: 14px; white-space: nowrap; }
+    .tag-list { display: flex; flex-direction: column; gap: 5px; }
+    .tag-item { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; color: rgba(255,255,255,0.75); }
+    .tag-item::before { content:''; width:6px; height:6px; background: var(--teal); border-radius:50%; flex-shrink:0; }
+
+    /* ─── CAMPAIGN CARDS ─── */
+    .campaign-grid { display: grid; gap: 20px; }
+    .campaign-card { background: #fff; border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 28px; box-shadow: var(--shadow-sm); transition: box-shadow 0.2s, transform 0.2s; }
+    .campaign-card:hover { box-shadow: var(--shadow); transform: translateY(-2px); }
+    .campaign-card.gold-card { border-color: rgba(201,168,71,0.28); background: linear-gradient(180deg,#fffdf8 0%,#fff 100%); }
+
+    .campaign-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; margin-bottom: 16px; }
+    .campaign-num { width: 40px; height: 40px; background: var(--teal-light); border: 1.5px solid var(--border-teal); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 18px; font-weight: 800; color: var(--teal); flex-shrink: 0; }
+    .campaign-num.gold { background: var(--gold-soft); border-color: rgba(201,168,71,0.28); color: var(--gold); }
+    .campaign-kicker { font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--teal); margin-bottom: 5px; }
+    .campaign-kicker.gold { color: var(--gold); }
+
+    .trigger-goal { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 20px; }
+    .tg-box { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 12px 14px; }
+    .tg-label { font-size: 10px; font-weight: 700; letter-spacing: 0.10em; text-transform: uppercase; color: var(--teal); margin-bottom: 4px; }
+    .tg-label.gold { color: var(--gold); }
+    .tg-text { font-size: 13px; color: var(--muted); line-height: 1.5; }
+
+    .status-badge { display: inline-flex; align-items: center; padding: 5px 12px; border-radius: 999px; font-size: 12px; font-weight: 600; white-space: nowrap; background: var(--surface-2); color: var(--muted); border: 1px solid var(--border); }
+    .status-badge.teal { background: var(--teal-light); color: var(--teal-dark); border-color: var(--border-teal); }
+    .status-badge.gold { background: var(--gold-soft); color: #7a5a17; border-color: rgba(201,168,71,0.3); }
+
+    /* Step table */
+    .step-table-wrap { overflow-x: auto; border: 1px solid var(--border); border-radius: var(--radius-sm); }
+    .step-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    .step-table th { background: var(--surface); color: var(--muted); font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 10px 14px; text-align: left; border-bottom: 1px solid var(--border); }
+    .step-table td { padding: 12px 14px; border-bottom: 1px solid var(--border); vertical-align: top; }
+    .step-table tr:last-child td { border-bottom: none; }
+    .step-table tbody tr:hover { background: var(--surface); }
+    .step-num { font-weight: 700; color: var(--teal); white-space: nowrap; }
+    .step-num.gold { color: var(--gold); }
+    .step-delay { color: var(--muted); font-size: 12px; white-space: nowrap; font-weight: 500; }
+    .step-subject { font-weight: 600; color: var(--navy); }
+    .step-action { color: var(--muted); }
+    .step-exit td { background: var(--gold-soft) !important; }
+    .step-exit .step-num { color: var(--gold); }
+    .step-exit .step-subject, .step-exit .step-action, .step-exit .step-delay { color: #7a5a17; }
+
+    /* ─── FLOW SECTION ─── */
+    .flow-section { background: #06121f; border-radius: var(--radius-lg); padding: 40px; margin-top: 48px; }
+    .flow-section .section-tag { color: var(--gold); }
+    .flow-section .section-tag::before { background: var(--gold); }
+    .flow-section h2 { color: #fff; margin-bottom: 10px; }
+    .flow-section p { color: rgba(255,255,255,0.55); margin-bottom: 28px; font-size: 14px; }
+    .flow-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 14px; }
+    .flow-box { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.10); border-radius: var(--radius-sm); padding: 18px; }
+    .flow-box-label { font-size: 10px; font-weight: 700; letter-spacing: 0.10em; text-transform: uppercase; color: rgba(255,255,255,0.40); margin-bottom: 10px; }
+    .flow-steps { list-style: none; display: flex; flex-direction: column; gap: 7px; }
+    .flow-steps li { font-size: 13px; color: rgba(255,255,255,0.78); display: flex; align-items: flex-start; gap: 8px; }
+    .flow-steps li::before { content:'→'; color: var(--teal); font-weight: 700; flex-shrink:0; }
+    .flow-steps li.gold::before { color: var(--gold); }
+
+    /* Notes / checkboxes (same as main plan) */
+    .notes-wrap { margin-top: 20px; padding-top: 18px; border-top: 1px solid var(--border); }
+    .notes-toggle-btn { display: inline-flex; align-items: center; gap: 7px; background: none; border: 1px solid var(--border); border-radius: 999px; padding: 6px 14px; font-size: 13px; font-weight: 600; color: var(--muted); cursor: pointer; transition: all 0.15s; font-family: inherit; }
+    .notes-toggle-btn:hover { background: var(--surface); color: var(--text); border-color: var(--teal); }
+    .notes-count-badge { display: inline-flex; align-items: center; justify-content: center; min-width: 18px; height: 18px; background: var(--teal); color: #fff; border-radius: 999px; font-size: 11px; padding: 0 5px; font-weight: 700; }
+    .notes-count-badge:empty { display: none; }
+    .notes-body { display: none; margin-top: 14px; }
+    .notes-wrap.open .notes-body { display: block; }
+    .notes-list { display: flex; flex-direction: column; gap: 10px; margin-bottom: 14px; }
+    .note-item { display: flex; gap: 10px; align-items: flex-start; }
+    .note-avatar { width: 30px; height: 30px; background: var(--teal-light); border: 1.5px solid var(--border-teal); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; color: var(--teal); flex-shrink: 0; }
+    .note-body-inner { flex: 1; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 10px 12px; }
+    .note-meta { display: flex; align-items: center; gap: 8px; margin-bottom: 4px; }
+    .note-who { font-size: 13px; font-weight: 600; color: var(--text); }
+    .note-when { font-size: 11px; color: var(--faint); }
+    .note-text { font-size: 13px; color: var(--muted); line-height: 1.5; white-space: pre-wrap; }
+    .no-notes { font-size: 13px; color: var(--faint); margin: 0 0 12px; }
+    .note-composer { display: flex; gap: 8px; align-items: flex-start; }
+    .note-input { flex: 1; border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 9px 12px; font-size: 13px; font-family: inherit; color: var(--text); resize: none; outline: none; transition: border-color 0.15s; background: var(--surface); }
+    .note-input:focus { border-color: var(--teal); background: #fff; }
+    .note-submit-btn { background: var(--teal); color: #fff; border: none; border-radius: var(--radius-sm); padding: 9px 16px; font-size: 13px; font-weight: 600; cursor: pointer; font-family: inherit; transition: background 0.15s; white-space: nowrap; }
+    .note-submit-btn:hover { background: var(--teal-dark); }
+
+    .toast { position: fixed; bottom: 28px; left: 50%; transform: translateX(-50%) translateY(20px); background: var(--navy); color: #fff; padding: 11px 20px; border-radius: 999px; font-size: 13px; font-weight: 500; opacity: 0; pointer-events: none; transition: opacity 0.2s, transform 0.2s; z-index: 999; white-space: nowrap; }
+    .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+    .toast.error { background: #c53030; }
+
+    footer { background: var(--navy); padding: 40px 28px; }
+    .footer-inner { max-width: var(--max); margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
+    .footer-brand { font-size: 15px; font-weight: 700; color: rgba(255,255,255,0.85); }
+    .footer-copy { font-size: 12px; color: rgba(255,255,255,0.25); }
+    .footer-link { font-size: 13px; color: rgba(255,255,255,0.45); text-decoration: none; transition: color 0.15s; }
+    .footer-link:hover { color: rgba(255,255,255,0.85); }
+
+    @media (max-width: 900px) {
+      .hero-inner, .setup-grid, .flow-grid { grid-template-columns: 1fr; }
+      .hero-card { display: none; }
+      .stats-inner { grid-template-columns: repeat(2,1fr); }
+      .trigger-goal { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 640px) {
+      .page { padding: 40px 16px 80px; }
+      .stats-inner { grid-template-columns: 1fr; }
+      .stat-item { border-right: none; border-bottom: 1px solid var(--border); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">
+        <span class="nav-logo-icon"><svg viewBox="0 0 16 16"><path d="M8 1.5C4.41 1.5 1.5 4.41 1.5 8S4.41 14.5 8 14.5 14.5 11.59 14.5 8 11.59 1.5 8 1.5zm0 2a4.5 4.5 0 110 9 4.5 4.5 0 010-9z" opacity=".4"/><circle cx="8" cy="8" r="2.5"/></svg></span>
+        Arts of Dreaming
+      </a>
+      <ul class="nav-links">
+        <li><a href="#setup">Setup</a></li>
+        <li><a href="#campaigns">Campaigns</a></li>
+        <li><a href="#flow">Full Flow</a></li>
+      </ul>
+      <div style="display:flex;align-items:center;gap:12px;">
+        <a href="index.html" class="nav-back">← Action Plan</a>
+        <div class="author-wrap">
+          <span class="author-label">Your name</span>
+          <input type="text" id="author-input" class="author-input" placeholder="Enter your name…">
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-inner">
+      <div>
+        <div class="hero-eyebrow">Arts of Dreaming</div>
+        <h1>Email <em>Marketing</em> Campaigns</h1>
+        <p class="hero-desc">8 automated Sender.net campaigns mapped to every stage of the Arts of Dreaming journey — from first assessment through annual membership. Archetype-segmented, identity-driven, timed for maximum resonance.</p>
+        <div class="hero-actions">
+          <a href="#setup" class="btn btn-primary">Setup guide →</a>
+          <a href="#campaigns" class="btn btn-ghost">View campaigns</a>
+        </div>
+      </div>
+      <div class="hero-card">
+        <div class="hero-card-label">Jump to campaign</div>
+        <ul class="campaign-index">
+          <li><a href="#c1"><span class="ci-num">1</span> Dreamer Type Activation</a></li>
+          <li><a href="#c2"><span class="ci-num">2</span> Deck Post-Purchase</a></li>
+          <li><a href="#c3"><span class="ci-num gold">3</span> Dream Sensei Upgrade</a></li>
+          <li><a href="#c4"><span class="ci-num gold">4</span> Journal Pro Upgrade</a></li>
+          <li><a href="#c5"><span class="ci-num">5</span> Re-engagement / Win-Back</a></li>
+          <li><a href="#c6"><span class="ci-num">6</span> Course Launch</a></li>
+          <li><a href="#c7"><span class="ci-num gold">7</span> Annual Membership</a></li>
+          <li><a href="#c8"><span class="ci-num">8</span> New Subscriber Onboarding</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- STATS -->
+  <div class="stats-bar">
+    <div class="stats-inner">
+      <div class="stat-item"><div class="stat-num teal">8</div><div class="stat-label">Automated campaigns</div></div>
+      <div class="stat-item"><div class="stat-num">40+</div><div class="stat-label">Automated touchpoints</div></div>
+      <div class="stat-item"><div class="stat-num gold">1</div><div class="stat-label">Archetype field powers all segmentation</div></div>
+      <div class="stat-item"><div class="stat-num teal">0</div><div class="stat-label">Manual sends required</div></div>
+    </div>
+  </div>
+
+  <div class="page">
+
+    <!-- ── SETUP ── -->
+    <section id="setup">
+      <div class="setup-card">
+        <div class="section-tag gold">Before you build anything</div>
+        <h2>Sender.net Setup</h2>
+        <p>Create these custom fields and tags in Sender.net before building any automation. All 8 campaigns depend on this foundation. Your app writes to these fields via the Sender.net API the moment a subscriber completes the assessment.</p>
+        <div class="setup-grid">
+          <div class="setup-box">
+            <h4>Custom Fields — Subscribers → Custom Fields</h4>
+            <table class="setup-table">
+              <thead><tr><th>Field name</th><th>Type</th><th>Values</th></tr></thead>
+              <tbody>
+                <tr><td>archetype_primary</td><td>Text</td><td>The Director, The Guardian, etc.</td></tr>
+                <tr><td>archetype_secondary</td><td>Text</td><td>Same archetype options</td></tr>
+                <tr><td>journey_stage</td><td>Text</td><td>prospect, active, deck-owner, subscriber, member</td></tr>
+                <tr><td>deck_purchased</td><td>Date</td><td>Set via Zapier on Shopify purchase</td></tr>
+                <tr><td>subscription_tier</td><td>Text</td><td>free, sensei, journal-pro, annual</td></tr>
+                <tr><td>journal_entry_count</td><td>Number</td><td>Updated from app via API</td></tr>
+                <tr><td>last_login</td><td>Date</td><td>Updated on each app login</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="setup-box">
+            <h4>Tags — Applied by App or Zapier</h4>
+            <div class="tag-list">
+              <div class="tag-item">assessment-complete</div>
+              <div class="tag-item">deck-purchased</div>
+              <div class="tag-item">sensei-limit-reached</div>
+              <div class="tag-item">journal-active (5+ entries)</div>
+              <div class="tag-item">dormant-14 (no login 14 days)</div>
+              <div class="tag-item">skool-member</div>
+              <div class="tag-item">course-enrolled-[archetype]</div>
+              <div class="tag-item">course-[archetype]-available</div>
+              <div class="tag-item">annual-member</div>
+              <div class="tag-item">unengaged-pre-assessment</div>
+            </div>
+            <div style="margin-top:14px;padding-top:14px;border-top:1px solid rgba(255,255,255,0.10);">
+              <h4 style="margin-bottom:8px;">API Integration Point</h4>
+              <p style="font-size:12px;color:rgba(255,255,255,0.55);line-height:1.6;">Your app calls the Sender.net API immediately after assessment completion — before showing the result page. This ensures Campaign 1 fires even if the user closes the browser after seeing their archetype.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── CAMPAIGNS ── -->
+    <section id="campaigns">
+      <div class="section-tag">Sender.net automations</div>
+      <h2>The 8 campaigns</h2>
+      <p class="section-intro">Each campaign is a Sender.net automation triggered by a tag, custom field value, or API event. Build them in priority order — Campaigns 1 and 8 first, since everything else depends on the archetype field being populated.</p>
+
+      <div class="campaign-grid">
+
+        <!-- C1 -->
+        <article class="campaign-card" data-card-id="email-c1" id="c1">
+          <div class="campaign-header">
+            <div style="display:flex;align-items:flex-start;gap:14px;">
+              <div class="campaign-num">1</div>
+              <div>
+                <div class="campaign-kicker">Priority — Build first</div>
+                <h3>Dreamer Type Activation</h3>
+              </div>
+            </div>
+            <span class="status-badge teal">Core sequence</span>
+          </div>
+          <div class="trigger-goal">
+            <div class="tg-box"><div class="tg-label">Trigger</div><div class="tg-text">Tag <strong>assessment-complete</strong> added + <code>archetype_primary</code> populated via API</div></div>
+            <div class="tg-box"><div class="tg-label">Goal</div><div class="tg-text">Deliver archetype meaning, build identity, move toward deck purchase</div></div>
+          </div>
+          <div class="step-table-wrap">
+            <table class="step-table">
+              <thead><tr><th>Step</th><th>Delay</th><th>Subject line</th><th>Content focus</th></tr></thead>
+              <tbody>
+                <tr><td class="step-num">1</td><td class="step-delay">Immediately</td><td class="step-subject">"Your [Archetype] reading is here"</td><td class="step-action">Full archetype meaning, lore, symbolism. No sell. Pure value delivery.</td></tr>
+                <tr><td class="step-num">2</td><td class="step-delay">Day 2</td><td class="step-subject">"How The [Archetype] moves through dreams"</td><td class="step-action">Practical guidance for their type. Soft mention of the physical deck as a companion tool.</td></tr>
+                <tr><td class="step-num">3</td><td class="step-delay">Day 4</td><td class="step-subject">"The physical companion for The [Archetype]"</td><td class="step-action">Deck introduction. Archetype-specific copy per variant. Direct Shopify link.</td></tr>
+                <tr><td class="step-num">4</td><td class="step-delay">Day 7</td><td class="step-subject">"Other [Archetype] dreamers are saying…"</td><td class="step-action">Social proof. Testimonials filtered by archetype where possible.</td></tr>
+                <tr><td class="step-num">5</td><td class="step-delay">Day 10</td><td class="step-subject">"Your archetype deck — a last thought"</td><td class="step-action">Final soft deck push. Introduce Dream Sensei as an alternative next step for those not ready to buy.</td></tr>
+                <tr class="step-exit"><td class="step-num gold">Exit</td><td class="step-delay">Any time</td><td class="step-subject">Deck purchased</td><td class="step-action">Remove from this campaign → add tag deck-purchased → trigger Campaign 2</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p style="font-size:12px;color:var(--faint);margin-top:12px;">Create 1 automation per archetype or use dynamic content blocks with <code>{{archetype_primary}}</code> merge tag.</p>
+        </article>
+
+        <!-- C2 -->
+        <article class="campaign-card" id="c2" data-card-id="email-c2">
+          <div class="campaign-header">
+            <div style="display:flex;align-items:flex-start;gap:14px;">
+              <div class="campaign-num">2</div>
+              <div>
+                <div class="campaign-kicker">Post-purchase</div>
+                <h3>Deck Post-Purchase Welcome</h3>
+              </div>
+            </div>
+            <span class="status-badge teal">Activation + upsell</span>
+          </div>
+          <div class="trigger-goal">
+            <div class="tg-box"><div class="tg-label">Trigger</div><div class="tg-text">Tag <strong>deck-purchased</strong> added via Zapier ← Shopify purchase webhook</div></div>
+            <div class="tg-box"><div class="tg-label">Goal</div><div class="tg-text">Activate the deck ritual, build habit, bridge to Dream Sensei subscription</div></div>
+          </div>
+          <div class="step-table-wrap">
+            <table class="step-table">
+              <thead><tr><th>Step</th><th>Delay</th><th>Subject line</th><th>Content focus</th></tr></thead>
+              <tbody>
+                <tr><td class="step-num">1</td><td class="step-delay">Immediately</td><td class="step-subject">"Your deck is on its way, [First Name]"</td><td class="step-action">Order confirmation + what to expect + how to prepare spiritually before it arrives.</td></tr>
+                <tr><td class="step-num">2</td><td class="step-delay">Day 3</td><td class="step-subject">"How to activate your [Archetype] deck"</td><td class="step-action">Ritual instructions, first pull guide, what each card position means.</td></tr>
+                <tr><td class="step-num">3</td><td class="step-delay">Day 7</td><td class="step-subject">"Your first week — what are you noticing?"</td><td class="step-action">Reflection prompt. Soft link to the Dream Journal as the place to record it.</td></tr>
+                <tr><td class="step-num">4</td><td class="step-delay">Day 14</td><td class="step-subject">"Go deeper with Dream Sensei"</td><td class="step-action">Introduce Dream Sensei as the deck's digital companion. Free tier invite.</td></tr>
+                <tr><td class="step-num">5</td><td class="step-delay">Day 21</td><td class="step-subject">"The [Archetype] subscription"</td><td class="step-action">Dream Sensei premium upgrade. Position as the next natural layer of practice.</td></tr>
+                <tr><td class="step-num">6</td><td class="step-delay">Day 30</td><td class="step-subject">"Your people are waiting"</td><td class="step-action">Skool community invite, surfacing other members with the same archetype.</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
+
+        <!-- C3 -->
+        <article class="campaign-card gold-card" id="c3" data-card-id="email-c3">
+          <div class="campaign-header">
+            <div style="display:flex;align-items:flex-start;gap:14px;">
+              <div class="campaign-num gold">3</div>
+              <div>
+                <div class="campaign-kicker gold">Recurring revenue</div>
+                <h3>Dream Sensei Freemium → Upgrade</h3>
+              </div>
+            </div>
+            <span class="status-badge gold">Subscription</span>
+          </div>
+          <div class="trigger-goal">
+            <div class="tg-box"><div class="tg-label teal">Trigger</div><div class="tg-text">Tag <strong>sensei-limit-reached</strong> added from app when user hits free tier cap</div></div>
+            <div class="tg-box"><div class="tg-label teal">Goal</div><div class="tg-text">Convert free Dream Sensei users to paid subscription — Stripe checkout</div></div>
+          </div>
+          <div class="step-table-wrap">
+            <table class="step-table">
+              <thead><tr><th>Step</th><th>Delay</th><th>Subject line</th><th>Content focus</th></tr></thead>
+              <tbody>
+                <tr><td class="step-num gold">1</td><td class="step-delay">Immediately</td><td class="step-subject">"You've gone as far as the free path goes"</td><td class="step-action">Acknowledge their engagement. Frame upgrade as natural progression, not a wall.</td></tr>
+                <tr><td class="step-num gold">2</td><td class="step-delay">Day 2</td><td class="step-subject">"What premium Dream Sensei unlocks for The [Archetype]"</td><td class="step-action">Specific feature callouts: longer readings, conversation history, saved insights, advanced prompts.</td></tr>
+                <tr><td class="step-num gold">3</td><td class="step-delay">Day 5</td><td class="step-subject">"Three [Archetype] dreamers on going premium"</td><td class="step-action">Social proof. Testimonials filtered by archetype. Quote format, not formal review.</td></tr>
+                <tr><td class="step-num gold">4</td><td class="step-delay">Day 9</td><td class="step-subject">"Your interpretation is waiting"</td><td class="step-action">Urgency close. Direct Stripe checkout link. Remove friction — one click to upgrade.</td></tr>
+                <tr class="step-exit"><td class="step-num gold">Exit</td><td class="step-delay">Any time</td><td class="step-subject">Upgraded to premium</td><td class="step-action">Update subscription_tier → remove from campaign → begin Campaign 7 eligibility check</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
+
+        <!-- C4 -->
+        <article class="campaign-card gold-card" id="c4" data-card-id="email-c4">
+          <div class="campaign-header">
+            <div style="display:flex;align-items:flex-start;gap:14px;">
+              <div class="campaign-num gold">4</div>
+              <div>
+                <div class="campaign-kicker gold">Recurring revenue</div>
+                <h3>Journal Pro Upgrade</h3>
+              </div>
+            </div>
+            <span class="status-badge gold">Subscription</span>
+          </div>
+          <div class="trigger-goal">
+            <div class="tg-box"><div class="tg-label">Trigger</div><div class="tg-text">Tag <strong>journal-active</strong> added when <code>journal_entry_count</code> reaches 5</div></div>
+            <div class="tg-box"><div class="tg-label">Goal</div><div class="tg-text">Convert engaged free journalers into Journal Pro subscribers</div></div>
+          </div>
+          <div class="step-table-wrap">
+            <table class="step-table">
+              <thead><tr><th>Step</th><th>Delay</th><th>Subject line</th><th>Content focus</th></tr></thead>
+              <tbody>
+                <tr><td class="step-num gold">1</td><td class="step-delay">Immediately</td><td class="step-subject">"You've been dreaming consistently"</td><td class="step-action">Acknowledge their practice. Celebrate 5 entries. No product push yet.</td></tr>
+                <tr><td class="step-num gold">2</td><td class="step-delay">Day 3</td><td class="step-subject">"What's hiding in your dream patterns"</td><td class="step-action">Tease pattern detection, dream tagging, archive features. Make the gap feel real.</td></tr>
+                <tr><td class="step-num gold">3</td><td class="step-delay">Day 6</td><td class="step-subject">"Journal Pro — built for The [Archetype]"</td><td class="step-action">Full feature breakdown. Show how each feature maps to their specific archetype's dream tendencies.</td></tr>
+                <tr><td class="step-num gold">4</td><td class="step-delay">Day 10</td><td class="step-subject">"One month of Journal Pro, on us?"</td><td class="step-action">Trial offer or introductory discount. Remove decision friction. Clear single CTA.</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
+
+        <!-- C5 -->
+        <article class="campaign-card" id="c5" data-card-id="email-c5">
+          <div class="campaign-header">
+            <div style="display:flex;align-items:flex-start;gap:14px;">
+              <div class="campaign-num">5</div>
+              <div>
+                <div class="campaign-kicker">Retention</div>
+                <h3>Re-engagement / Win-Back</h3>
+              </div>
+            </div>
+            <span class="status-badge">Win-back</span>
+          </div>
+          <div class="trigger-goal">
+            <div class="tg-box"><div class="tg-label">Trigger</div><div class="tg-text"><code>last_login</code> field is 14+ days ago → tag <strong>dormant-14</strong> via Zapier daily check</div></div>
+            <div class="tg-box"><div class="tg-label">Goal</div><div class="tg-text">Re-activate lapsed users with low-friction re-entry before they fully disengage</div></div>
+          </div>
+          <div class="step-table-wrap">
+            <table class="step-table">
+              <thead><tr><th>Step</th><th>Delay</th><th>Subject line</th><th>Content focus</th></tr></thead>
+              <tbody>
+                <tr><td class="step-num">1</td><td class="step-delay">Immediately</td><td class="step-subject">"The [Archetype] doesn't disappear — it waits"</td><td class="step-action">Emotional, on-brand re-entry. No product push. Pure belonging signal.</td></tr>
+                <tr><td class="step-num">2</td><td class="step-delay">Day 4</td><td class="step-subject">"Here's what other [Archetype] dreamers have been experiencing"</td><td class="step-action">Community activity, new features, recent dream card content. FOMO through warmth.</td></tr>
+                <tr><td class="step-num">3</td><td class="step-delay">Day 8</td><td class="step-subject">"Your daily card is ready"</td><td class="step-action">Daily pull mechanic as low-friction re-entry point. One click to return.</td></tr>
+                <tr><td class="step-num">4</td><td class="step-delay">Day 14</td><td class="step-subject">"Should we let your dreams rest?"</td><td class="step-action">Re-permission email. Easy opt-down or clear return path. Preserves list quality.</td></tr>
+                <tr class="step-exit"><td class="step-num gold">Exit</td><td class="step-delay">Any time</td><td class="step-subject">Returns to app</td><td class="step-action">Remove dormant-14 tag → update last_login → exit campaign</td></tr>
+                <tr class="step-exit"><td class="step-num gold">No open</td><td class="step-delay">Day 28</td><td class="step-subject">No response</td><td class="step-action">Tag unengaged → suppress from broadcast sends to protect sender reputation</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
+
+        <!-- C6 -->
+        <article class="campaign-card" id="c6" data-card-id="email-c6">
+          <div class="campaign-header">
+            <div style="display:flex;align-items:flex-start;gap:14px;">
+              <div class="campaign-num">6</div>
+              <div>
+                <div class="campaign-kicker">Digital product</div>
+                <h3>Course Launch (Per Archetype)</h3>
+              </div>
+            </div>
+            <span class="status-badge">One-time launch</span>
+          </div>
+          <div class="trigger-goal">
+            <div class="tg-box"><div class="tg-label">Trigger</div><div class="tg-text">Tag <strong>course-[archetype]-available</strong> manually applied at launch time</div></div>
+            <div class="tg-box"><div class="tg-label">Goal</div><div class="tg-text">Drive course enrollment from warm archetype-segmented subscribers</div></div>
+          </div>
+          <div class="step-table-wrap">
+            <table class="step-table">
+              <thead><tr><th>Step</th><th>Delay</th><th>Subject line</th><th>Content focus</th></tr></thead>
+              <tbody>
+                <tr><td class="step-num">1</td><td class="step-delay">Day 0</td><td class="step-subject">"We built this for The [Archetype] specifically"</td><td class="step-action">Launch announcement. What the course covers. Why it's archetype-specific, not generic.</td></tr>
+                <tr><td class="step-num">2</td><td class="step-delay">Day 2</td><td class="step-subject">"Inside the [Archetype] course — a look"</td><td class="step-action">Content preview, module breakdown, what transformation to expect. Vimeo preview clip.</td></tr>
+                <tr><td class="step-num">3</td><td class="step-delay">Day 5</td><td class="step-subject">"Early enrollment closes [date]"</td><td class="step-action">Pricing, early bird offer if applicable, FAQ addressing common objections.</td></tr>
+                <tr><td class="step-num">4</td><td class="step-delay">Day 7</td><td class="step-subject">"Last day — The [Archetype] course"</td><td class="step-action">Final enrollment push. Countdown. What they'll miss if they wait for next cohort.</td></tr>
+                <tr class="step-exit"><td class="step-num gold">Exit</td><td class="step-delay">Any time</td><td class="step-subject">Course enrolled</td><td class="step-action">Tag course-enrolled → Zapier notifies Skool → welcome to community flow</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p style="font-size:12px;color:var(--faint);margin-top:12px;">Build one campaign template, clone and remap the archetype field for each new course launch. Segment the recipient list by <code>archetype_primary</code> before applying the trigger tag.</p>
+        </article>
+
+        <!-- C7 -->
+        <article class="campaign-card gold-card" id="c7" data-card-id="email-c7">
+          <div class="campaign-header">
+            <div style="display:flex;align-items:flex-start;gap:14px;">
+              <div class="campaign-num gold">7</div>
+              <div>
+                <div class="campaign-kicker gold">Highest LTV</div>
+                <h3>Annual Membership Invitation</h3>
+              </div>
+            </div>
+            <span class="status-badge gold">Highest LTV</span>
+          </div>
+          <div class="trigger-goal">
+            <div class="tg-box"><div class="tg-label teal">Trigger</div><div class="tg-text"><code>journey_stage</code> = subscriber AND subscriber age > 60 days AND <code>subscription_tier</code> ≠ annual</div></div>
+            <div class="tg-box"><div class="tg-label teal">Goal</div><div class="tg-text">Convert proven subscribers to the highest-value annual bundle — only after component products are trusted</div></div>
+          </div>
+          <div class="step-table-wrap">
+            <table class="step-table">
+              <thead><tr><th>Step</th><th>Delay</th><th>Subject line</th><th>Content focus</th></tr></thead>
+              <tbody>
+                <tr><td class="step-num gold">1</td><td class="step-delay">Day 0</td><td class="step-subject">"You've been dreaming with us for [X] days"</td><td class="step-action">Personal milestone acknowledgment. Build belonging and earned status. No pitch yet.</td></tr>
+                <tr><td class="step-num gold">2</td><td class="step-delay">Day 3</td><td class="step-subject">"Everything in one place — the Annual Path"</td><td class="step-action">Full bundle breakdown: Sensei + Journal Pro + courses + Skool. Show the saving vs individual.</td></tr>
+                <tr><td class="step-num gold">3</td><td class="step-delay">Day 7</td><td class="step-subject">"Founding member pricing — available this week"</td><td class="step-action">Urgency + exclusivity. Position as early adopter reward. Clear Stripe checkout CTA.</td></tr>
+                <tr><td class="step-num gold">4</td><td class="step-delay">Day 12</td><td class="step-subject">"The annual path closes to founding members [date]"</td><td class="step-action">Final close. Remind them of everything in the bundle. Remove regret risk.</td></tr>
+                <tr class="step-exit"><td class="step-num gold">Exit</td><td class="step-delay">Any time</td><td class="step-subject">Purchased annual</td><td class="step-action">Update subscription_tier = annual → tag annual-member → onboard to full Skool access</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
+
+        <!-- C8 -->
+        <article class="campaign-card" id="c8" data-card-id="email-c8">
+          <div class="campaign-header">
+            <div style="display:flex;align-items:flex-start;gap:14px;">
+              <div class="campaign-num">8</div>
+              <div>
+                <div class="campaign-kicker">Build second</div>
+                <h3>New Subscriber Onboarding</h3>
+              </div>
+            </div>
+            <span class="status-badge teal">Pre-assessment</span>
+          </div>
+          <div class="trigger-goal">
+            <div class="tg-box"><div class="tg-label">Trigger</div><div class="tg-text">New subscriber added to list without <code>archetype_primary</code> field populated</div></div>
+            <div class="tg-box"><div class="tg-label">Goal</div><div class="tg-text">Get them to complete the assessment so Campaign 1 fires — this is the gateway</div></div>
+          </div>
+          <div class="step-table-wrap">
+            <table class="step-table">
+              <thead><tr><th>Step</th><th>Delay</th><th>Subject line</th><th>Content focus</th></tr></thead>
+              <tbody>
+                <tr><td class="step-num">1</td><td class="step-delay">Immediately</td><td class="step-subject">"Welcome to Arts of Dreaming"</td><td class="step-action">Brand intro, what's possible, single CTA to take the Dreamer Type assessment.</td></tr>
+                <tr><td class="step-num">2</td><td class="step-delay">Day 2</td><td class="step-subject">"What is a Dreamer Type?"</td><td class="step-action">Education email. Show the 8 archetypes. Lower the barrier. Make them curious about their result.</td></tr>
+                <tr><td class="step-num">3</td><td class="step-delay">Day 4</td><td class="step-subject">"5 minutes to discover yours"</td><td class="step-action">Direct CTA back to assessment. Emphasize it's fast, free, and immediate.</td></tr>
+                <tr><td class="step-num">4</td><td class="step-delay">Day 7</td><td class="step-subject">"One last nudge"</td><td class="step-action">Final push with social proof — "X people discovered their archetype this week".</td></tr>
+                <tr class="step-exit"><td class="step-num gold">Exit</td><td class="step-delay">Any time</td><td class="step-subject">Assessment completed</td><td class="step-action">archetype_primary populated → exit this campaign → Campaign 1 triggers automatically</td></tr>
+                <tr class="step-exit"><td class="step-num gold">No action</td><td class="step-delay">Day 10</td><td class="step-subject">No assessment taken</td><td class="step-action">Tag unengaged-pre-assessment → move to low-frequency broadcast only</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ── FULL FLOW ── -->
+    <section id="flow">
+      <div class="flow-section">
+        <div class="section-tag gold">End-to-end</div>
+        <h2>How the campaigns connect</h2>
+        <p>Every subscriber enters at Campaign 8 (if no archetype) or Campaign 1 (if archetype is known). All other campaigns are triggered by behavior. No manual sends required.</p>
+        <div class="flow-grid">
+          <div class="flow-box">
+            <div class="flow-box-label">Entry</div>
+            <ul class="flow-steps">
+              <li>New subscriber → Campaign 8 (onboarding)</li>
+              <li>Takes assessment → archetype set</li>
+              <li>Campaign 1 fires automatically</li>
+              <li class="gold">App writes archetype to Sender.net via API</li>
+            </ul>
+          </div>
+          <div class="flow-box">
+            <div class="flow-box-label">Conversion triggers</div>
+            <ul class="flow-steps">
+              <li>Buys deck → Campaign 2 (post-purchase)</li>
+              <li>Hits Sensei limit → Campaign 3 (upgrade)</li>
+              <li>5 journal entries → Campaign 4 (Journal Pro)</li>
+              <li class="gold">Course launches → Campaign 6 (archetype-targeted)</li>
+            </ul>
+          </div>
+          <div class="flow-box">
+            <div class="flow-box-label">Retention + LTV</div>
+            <ul class="flow-steps">
+              <li>No login 14 days → Campaign 5 (win-back)</li>
+              <li>60 days as subscriber → Campaign 7 (annual)</li>
+              <li class="gold">Annual purchased → full Skool + bundle access</li>
+              <li>Unengaged → suppressed, list stays healthy</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">Arts of Dreaming</div>
+      <a href="index.html" class="footer-link">← Back to Action Plan</a>
+      <div class="footer-copy">© Arts of Dreaming 2026. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast"></div>
+
+  <!-- FIREBASE -->
+  <script type="module">
+    import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js';
+    import { getFirestore, doc, onSnapshot, setDoc, arrayUnion } from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js';
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyBQvfLwUWcPHTvL7XRZxmqW1SOu3SFepKs",
+      authDomain: "studio-1652924936-40c9f.firebaseapp.com",
+      projectId: "studio-1652924936-40c9f",
+      storageBucket: "studio-1652924936-40c9f.firebasestorage.app",
+      messagingSenderId: "735989568298",
+      appId: "1:735989568298:web:afa5125233dfcf27724453"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+
+    const toastEl = document.getElementById('toast');
+    let toastTimer;
+    function toast(msg, isError = false) {
+      toastEl.textContent = msg;
+      toastEl.className = 'toast show' + (isError ? ' error' : '');
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => toastEl.classList.remove('show'), 3000);
+    }
+
+    let author = localStorage.getItem('aod-author') || '';
+    const authorInput = document.getElementById('author-input');
+    authorInput.value = author;
+    authorInput.addEventListener('change', () => {
+      author = authorInput.value.trim();
+      localStorage.setItem('aod-author', author);
+      if (author) toast(`Signed in as ${author}`);
+    });
+
+    function requireAuthor() {
+      if (author) return true;
+      authorInput.classList.add('shake');
+      authorInput.focus();
+      toast('Enter your name in the top bar first', true);
+      setTimeout(() => authorInput.classList.remove('shake'), 800);
+      return false;
+    }
+
+    function fmt(iso) {
+      if (!iso) return '';
+      const d = new Date(iso);
+      return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' }) + ' · ' + d.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit' });
+    }
+    function initials(name) { return (name || '?').trim().split(/\s+/).map(w => w[0]).join('').toUpperCase().slice(0, 2); }
+
+    const CARDS = ['email-c1','email-c2','email-c3','email-c4','email-c5','email-c6','email-c7','email-c8'];
+
+    CARDS.forEach(cardId => {
+      const el = document.querySelector(`[data-card-id="${cardId}"]`);
+      if (!el) return;
+      const ref = doc(db, 'aod-plan', cardId);
+
+      const wrap = document.createElement('div');
+      wrap.className = 'notes-wrap';
+      wrap.innerHTML = `
+        <button class="notes-toggle-btn">
+          <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H2a1 1 0 00-1 1v9a1 1 0 001 1h2.5L8 16l3.5-3H14a1 1 0 001-1V3a1 1 0 00-1-1z"/><path d="M5 6h6M5 9.5h3.5"/></svg>
+          Team notes <span class="notes-count-badge"></span>
+        </button>
+        <div class="notes-body">
+          <div class="notes-list"></div>
+          <div class="note-composer">
+            <textarea class="note-input" placeholder="Add a note for the team…" rows="2"></textarea>
+            <button class="note-submit-btn">Post</button>
+          </div>
+        </div>`;
+      el.appendChild(wrap);
+
+      wrap.querySelector('.notes-toggle-btn').addEventListener('click', () => wrap.classList.toggle('open'));
+      wrap.querySelector('.note-submit-btn').addEventListener('click', async () => {
+        if (!requireAuthor()) return;
+        const ta = wrap.querySelector('.note-input');
+        const text = ta.value.trim();
+        if (!text) return;
+        try {
+          await setDoc(ref, { notes: arrayUnion({ text, author, at: new Date().toISOString() }) }, { merge: true });
+          ta.value = '';
+          toast('Note posted');
+        } catch (e) { toast('Could not save — check Firestore is enabled', true); console.error(e); }
+      });
+
+      onSnapshot(ref, snap => {
+        const notes = (snap.data() || {}).notes || [];
+        wrap.querySelector('.notes-count-badge').textContent = notes.length || '';
+        wrap.querySelector('.notes-list').innerHTML = notes.length
+          ? [...notes].reverse().map(n => `
+              <div class="note-item">
+                <div class="note-avatar">${initials(n.author)}</div>
+                <div class="note-body-inner">
+                  <div class="note-meta"><span class="note-who">${n.author||'Anonymous'}</span><span class="note-when">${fmt(n.at)}</span></div>
+                  <div class="note-text">${n.text.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/\n/g,'<br>')}</div>
+                </div>
+              </div>`).join('')
+          : '<p class="no-notes">No notes yet.</p>';
+      });
+    });
+  </script>
+
+</body>
+</html>
