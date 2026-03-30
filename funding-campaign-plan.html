@@ -1,0 +1,988 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Arts of Dreaming — Funding & Campaign Plan</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #0f1d34;
+      --teal: #2e90b8;
+      --teal-dark: #246f8f;
+      --teal-light: #e6f4f9;
+      --teal-mid: #a8d8ec;
+      --gold: #c9a847;
+      --gold-soft: #fdf7e8;
+      --text: #0f1d34;
+      --muted: #4a5f72;
+      --faint: #8aa0b0;
+      --border: rgba(15, 29, 52, 0.10);
+      --border-teal: rgba(46, 144, 184, 0.22);
+      --bg: #ffffff;
+      --surface: #f6fafc;
+      --surface-2: #eef6f9;
+      --shadow-sm: 0 2px 8px rgba(15, 29, 52, 0.07);
+      --shadow: 0 8px 32px rgba(15, 29, 52, 0.10);
+      --img-bg: linear-gradient(rgba(15,29,52,0.84), rgba(15,29,52,0.84)), url('https://artsofdreaming.com/wp-content/uploads/2025/03/Dream-Sensei.png');
+      --radius: 16px;
+      --radius-sm: 10px;
+      --radius-lg: 24px;
+      --max: 1100px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--bg); line-height: 1.6; font-size: 15px; }
+
+    /* ─── NAV ─── */
+    nav { position: sticky; top: 0; z-index: 100; background: rgba(255,255,255,0.94); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
+    .nav-inner { max-width: var(--max); margin: 0 auto; padding: 0 28px; height: 64px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+    .nav-logo { font-weight: 800; font-size: 17px; color: var(--navy); letter-spacing: -0.02em; display: flex; align-items: center; gap: 8px; text-decoration: none; flex-shrink: 0; }
+    .nav-logo-icon { width: 30px; height: 30px; background: var(--teal); border-radius: 8px; display: flex; align-items: center; justify-content: center; }
+    .nav-logo-icon svg { width: 16px; height: 16px; fill: #fff; }
+    .nav-links { display: flex; gap: 4px; list-style: none; }
+    .nav-links a { padding: 6px 12px; font-size: 13px; font-weight: 500; color: var(--muted); text-decoration: none; border-radius: 8px; transition: background 0.15s, color 0.15s; }
+    .nav-links a:hover { background: var(--surface); color: var(--text); }
+    .nav-back { display: inline-flex; align-items: center; gap: 6px; padding: 7px 14px; border-radius: 999px; font-size: 13px; font-weight: 600; color: var(--navy); text-decoration: none; border: 1px solid var(--border); transition: background 0.15s; }
+    .nav-back:hover { background: var(--surface); }
+    .author-wrap { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
+    .author-label { font-size: 12px; color: var(--faint); font-weight: 500; white-space: nowrap; }
+    .author-input { border: 1px solid var(--border); border-radius: 999px; padding: 6px 14px; font-size: 13px; font-family: inherit; color: var(--text); outline: none; width: 150px; transition: border-color 0.15s; background: var(--surface); }
+    .author-input:focus { border-color: var(--teal); background: #fff; }
+    .author-input.shake { animation: shake 0.35s; border-color: #e53e3e !important; }
+    @keyframes shake { 0%,100%{transform:translateX(0)} 20%,60%{transform:translateX(-4px)} 40%,80%{transform:translateX(4px)} }
+
+    /* ─── HERO ─── */
+    .hero {
+      background: var(--img-bg); background-size: cover; background-position: center;
+      padding: 72px 28px 88px; position: relative; overflow: hidden;
+    }
+    .hero-inner { max-width: var(--max); margin: 0 auto; display: grid; grid-template-columns: 1fr 340px; gap: 48px; align-items: center; position: relative; z-index: 1; }
+    .hero-eyebrow { display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.10); border: 1px solid rgba(255,255,255,0.15); border-radius: 999px; padding: 6px 14px; font-size: 12px; font-weight: 600; letter-spacing: 0.10em; text-transform: uppercase; color: rgba(255,255,255,0.75); margin-bottom: 24px; }
+    .hero-eyebrow::before { content:''; width:6px; height:6px; background:var(--gold); border-radius:50%; }
+    .hero h1 { font-size: clamp(2rem, 3.8vw, 3.4rem); font-weight: 800; line-height: 1.08; letter-spacing: -0.03em; color: #fff; margin-bottom: 18px; }
+    .hero h1 em { font-style: normal; color: var(--gold); }
+    .hero-desc { color: rgba(255,255,255,0.65); font-size: 15px; line-height: 1.75; max-width: 52ch; margin-bottom: 32px; }
+    .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 11px 22px; border-radius: 999px; font-weight: 600; font-size: 14px; text-decoration: none; transition: all 0.15s; cursor: pointer; border: none; font-family: inherit; }
+    .btn-primary { background: var(--teal); color: #fff; }
+    .btn-primary:hover { background: var(--teal-dark); }
+    .btn-ghost { background: rgba(255,255,255,0.10); border: 1px solid rgba(255,255,255,0.20); color: #fff; }
+    .btn-ghost:hover { background: rgba(255,255,255,0.18); }
+
+    .hero-card { background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12); border-radius: var(--radius-lg); padding: 24px; backdrop-filter: blur(8px); }
+    .hero-card-label { font-size: 11px; font-weight: 700; letter-spacing: 0.10em; text-transform: uppercase; color: rgba(255,255,255,0.45); margin-bottom: 12px; }
+    .jump-list { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+    .jump-list a { display: flex; align-items: center; gap: 10px; padding: 9px 12px; background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.10); border-radius: var(--radius-sm); text-decoration: none; color: rgba(255,255,255,0.82); font-size: 13px; font-weight: 500; transition: background 0.15s; }
+    .jump-list a:hover { background: rgba(255,255,255,0.13); }
+    .jump-num { width: 22px; height: 22px; background: var(--teal); border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; color: #fff; flex-shrink: 0; }
+    .jump-num.gold { background: var(--gold); }
+
+    /* ─── STATS ─── */
+    .stats-bar { border-bottom: 1px solid var(--border); }
+    .stats-inner { max-width: var(--max); margin: 0 auto; padding: 0 28px; display: grid; grid-template-columns: repeat(4,1fr); }
+    .stat-item { padding: 24px; border-right: 1px solid var(--border); }
+    .stat-item:last-child { border-right: none; }
+    .stat-num { font-size: 1.8rem; font-weight: 800; letter-spacing: -0.04em; color: var(--navy); line-height: 1; margin-bottom: 4px; }
+    .stat-num.teal { color: var(--teal); }
+    .stat-num.gold { color: var(--gold); }
+    .stat-label { font-size: 13px; color: var(--muted); font-weight: 500; }
+
+    /* ─── LAYOUT ─── */
+    .page { max-width: var(--max); margin: 0 auto; padding: 60px 28px 100px; }
+    section { margin-bottom: 72px; }
+    .section-tag { display: inline-flex; align-items: center; gap: 6px; font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--teal); margin-bottom: 14px; }
+    .section-tag::before { content:''; width:16px; height:2px; background:var(--teal); border-radius:2px; }
+    .section-tag.gold { color: var(--gold); }
+    .section-tag.gold::before { background: var(--gold); }
+    h2 { font-size: clamp(1.6rem, 2.6vw, 2.3rem); font-weight: 800; letter-spacing: -0.03em; line-height: 1.1; color: var(--navy); margin-bottom: 12px; }
+    h3 { font-size: clamp(1rem, 1.4vw, 1.2rem); font-weight: 700; letter-spacing: -0.02em; color: var(--navy); }
+    .section-intro { font-size: 15px; color: var(--muted); max-width: 65ch; line-height: 1.75; margin-bottom: 36px; }
+
+    /* ─── PLATFORM COMPARISON ─── */
+    .platform-dark {
+      background: var(--img-bg); background-size: cover; background-position: center;
+      border-radius: var(--radius-lg); padding: 40px; margin-bottom: 48px;
+    }
+    .platform-dark .section-tag { color: var(--gold); }
+    .platform-dark .section-tag::before { background: var(--gold); }
+    .platform-dark h2 { color: #fff; }
+    .platform-dark p { color: rgba(255,255,255,0.58); font-size: 14px; margin-bottom: 28px; max-width: 60ch; line-height: 1.7; }
+
+    .platform-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 14px; }
+    .platform-box { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.11); border-radius: var(--radius-sm); padding: 20px; transition: background 0.15s; }
+    .platform-box:hover { background: rgba(255,255,255,0.10); }
+    .platform-box.featured { background: rgba(201,168,71,0.12); border-color: rgba(201,168,71,0.30); }
+    .platform-name { font-size: 16px; font-weight: 800; color: #fff; margin-bottom: 4px; letter-spacing: -0.02em; }
+    .platform-tag { display: inline-flex; padding: 3px 9px; border-radius: 999px; font-size: 11px; font-weight: 600; margin-bottom: 10px; background: rgba(255,255,255,0.10); color: rgba(255,255,255,0.70); }
+    .platform-tag.gold { background: rgba(201,168,71,0.20); color: var(--gold); }
+    .platform-tag.teal { background: rgba(46,144,184,0.20); color: #7ed3f0; }
+    .platform-fee { font-size: 13px; color: rgba(255,255,255,0.55); margin-bottom: 10px; }
+    .platform-fee strong { color: rgba(255,255,255,0.85); }
+    .platform-verdict { font-size: 13px; color: rgba(255,255,255,0.72); line-height: 1.55; }
+    .platform-verdict strong { color: var(--gold); }
+
+    .platform-skip-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 12px; margin-top: 14px; }
+    .platform-skip-box { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.07); border-radius: var(--radius-sm); padding: 14px 16px; }
+    .platform-skip-name { font-size: 14px; font-weight: 700; color: rgba(255,255,255,0.65); margin-bottom: 4px; }
+    .platform-skip-reason { font-size: 12px; color: rgba(255,255,255,0.40); line-height: 1.5; }
+
+    /* ─── PLAN CARDS ─── */
+    .plan-grid, .phase-grid { display: grid; gap: 16px; }
+    .plan-card { background: #fff; border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 28px; box-shadow: var(--shadow-sm); transition: box-shadow 0.2s, transform 0.2s; }
+    .plan-card:hover { box-shadow: var(--shadow); transform: translateY(-2px); }
+    .plan-card.gold-card { border-color: rgba(201,168,71,0.28); background: linear-gradient(180deg,#fffdf8 0%,#fff 100%); }
+
+    .card-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; margin-bottom: 14px; }
+    .card-kicker { font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--teal); margin-bottom: 6px; }
+    .card-kicker.gold { color: var(--gold); }
+    .card-meta { font-size: 14px; color: var(--muted); margin-bottom: 16px; line-height: 1.6; }
+
+    .status-badge { display: inline-flex; align-items: center; padding: 5px 12px; border-radius: 999px; font-size: 12px; font-weight: 600; white-space: nowrap; background: var(--surface-2); color: var(--muted); border: 1px solid var(--border); }
+    .status-badge.teal { background: var(--teal-light); color: var(--teal-dark); border-color: var(--border-teal); }
+    .status-badge.gold { background: var(--gold-soft); color: #7a5a17; border-color: rgba(201,168,71,0.3); }
+
+    /* Tier cards */
+    .tier-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 14px; margin-top: 16px; }
+    .tier-card { border-radius: var(--radius-sm); padding: 18px; border: 1px solid var(--border); }
+    .tier-card.t1 { background: var(--surface); }
+    .tier-card.t2 { background: var(--teal-light); border-color: var(--border-teal); }
+    .tier-card.t3 { background: var(--gold-soft); border-color: rgba(201,168,71,0.25); }
+    .tier-card.t4 { background: var(--navy); }
+    .tier-name { font-size: 15px; font-weight: 800; color: var(--navy); margin-bottom: 2px; }
+    .tier-card.t4 .tier-name { color: #fff; }
+    .tier-price { font-size: 22px; font-weight: 800; letter-spacing: -0.04em; color: var(--teal); margin-bottom: 10px; line-height: 1; }
+    .tier-card.t3 .tier-price, .tier-card.t4 .tier-price { color: var(--gold); }
+    .tier-perks { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+    .tier-perks li { font-size: 13px; color: var(--muted); display: flex; align-items: flex-start; gap: 8px; }
+    .tier-card.t4 .tier-perks li { color: rgba(255,255,255,0.72); }
+    .tier-perks li::before { content:'✓'; color: var(--teal); font-weight: 700; flex-shrink: 0; font-size: 12px; margin-top: 1px; }
+    .tier-card.t3 .tier-perks li::before, .tier-card.t4 .tier-perks li::before { color: var(--gold); }
+
+    /* Timeline */
+    .timeline { display: flex; flex-direction: column; gap: 0; margin-top: 16px; }
+    .timeline-item { display: flex; gap: 16px; padding-bottom: 20px; position: relative; }
+    .timeline-item:last-child { padding-bottom: 0; }
+    .timeline-left { display: flex; flex-direction: column; align-items: center; flex-shrink: 0; }
+    .tl-dot { width: 32px; height: 32px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 800; flex-shrink: 0; }
+    .tl-dot.teal { background: var(--teal-light); color: var(--teal); border: 1.5px solid var(--border-teal); }
+    .tl-dot.gold { background: var(--gold-soft); color: var(--gold); border: 1.5px solid rgba(201,168,71,0.3); }
+    .tl-line { width: 2px; flex: 1; background: var(--border); margin-top: 4px; min-height: 20px; }
+    .timeline-item:last-child .tl-line { display: none; }
+    .tl-content { padding-top: 4px; flex: 1; }
+    .tl-week { font-size: 11px; font-weight: 700; letter-spacing: 0.10em; text-transform: uppercase; color: var(--teal); margin-bottom: 3px; }
+    .tl-title { font-size: 14px; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
+    .tl-desc { font-size: 13px; color: var(--muted); line-height: 1.55; }
+
+    /* Reward tiers table */
+    .reward-table-wrap { overflow-x: auto; border: 1px solid var(--border); border-radius: var(--radius-sm); margin-top: 16px; }
+    .reward-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    .reward-table th { background: var(--surface); color: var(--muted); font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 10px 14px; text-align: left; border-bottom: 1px solid var(--border); }
+    .reward-table td { padding: 13px 14px; border-bottom: 1px solid var(--border); vertical-align: top; }
+    .reward-table tr:last-child td { border-bottom: none; }
+    .reward-table tbody tr:hover { background: var(--surface); }
+    .reward-price { font-weight: 800; color: var(--navy); white-space: nowrap; font-size: 14px; }
+    .reward-name { font-weight: 700; color: var(--navy); margin-bottom: 2px; }
+    .reward-desc { color: var(--muted); font-size: 12px; }
+    .reward-badge { display: inline-flex; padding: 2px 8px; border-radius: 999px; font-size: 11px; font-weight: 600; }
+    .reward-badge.gold { background: var(--gold-soft); color: #7a5a17; }
+    .reward-badge.teal { background: var(--teal-light); color: var(--teal-dark); }
+
+    /* Stretch goals */
+    .stretch-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 12px; margin-top: 16px; }
+    .stretch-box { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 16px; display: flex; align-items: flex-start; gap: 14px; }
+    .stretch-goal-num { font-size: 15px; font-weight: 800; color: var(--gold); white-space: nowrap; flex-shrink: 0; letter-spacing: -0.03em; }
+    .stretch-title { font-size: 13px; font-weight: 700; color: var(--navy); margin-bottom: 3px; }
+    .stretch-desc { font-size: 12px; color: var(--muted); line-height: 1.5; }
+
+    /* collapsible */
+    details { margin-top: 20px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-sm); overflow: hidden; }
+    summary { cursor: pointer; padding: 13px 16px; font-size: 13px; font-weight: 600; color: var(--navy); list-style: none; display: flex; align-items: center; justify-content: space-between; }
+    summary::-webkit-details-marker { display: none; }
+    summary::after { content:'+'; width:22px; height:22px; background:var(--teal-light); color:var(--teal); border-radius:6px; display:flex; align-items:center; justify-content:center; font-size:16px; font-weight:700; flex-shrink:0; }
+    details[open] summary::after { content:'–'; }
+    .details-body { padding: 0 16px 16px; border-top: 1px solid var(--border); background: #fff; }
+    .detail-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 12px; margin-top: 14px; }
+    .detail-box { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 14px; }
+    .detail-box h4 { font-size: 11px; font-weight: 700; letter-spacing: 0.10em; text-transform: uppercase; color: var(--teal); margin-bottom: 8px; }
+    .detail-list { list-style: none; display: flex; flex-direction: column; gap: 5px; }
+    .detail-list li { font-size: 13px; color: var(--muted); padding-left: 10px; position: relative; }
+    .detail-list li::before { content:'·'; position:absolute; left:0; color:var(--teal); font-weight:700; }
+
+    /* checklist */
+    .check-list { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .check-list li { display: flex; align-items: flex-start; gap: 10px; font-size: 14px; }
+    .task-check { width: 17px; height: 17px; border: 2px solid var(--border-teal); border-radius: 4px; cursor: pointer; flex-shrink: 0; appearance: none; -webkit-appearance: none; background: #fff; transition: all 0.15s; margin-top: 2px; position: relative; }
+    .task-check:checked { background: var(--teal); border-color: var(--teal); }
+    .task-check:checked::after { content:''; position:absolute; top:1px; left:4px; width:5px; height:9px; border:2px solid #fff; border-top:none; border-left:none; transform:rotate(40deg); }
+    li.task-done span { text-decoration: line-through; color: var(--faint); }
+
+    /* notes */
+    .notes-wrap { margin-top: 20px; padding-top: 18px; border-top: 1px solid var(--border); }
+    .notes-toggle-btn { display: inline-flex; align-items: center; gap: 7px; background: none; border: 1px solid var(--border); border-radius: 999px; padding: 6px 14px; font-size: 13px; font-weight: 600; color: var(--muted); cursor: pointer; transition: all 0.15s; font-family: inherit; }
+    .notes-toggle-btn:hover { background: var(--surface); color: var(--text); border-color: var(--teal); }
+    .notes-count-badge { display: inline-flex; align-items: center; justify-content: center; min-width: 18px; height: 18px; background: var(--teal); color: #fff; border-radius: 999px; font-size: 11px; padding: 0 5px; font-weight: 700; }
+    .notes-count-badge:empty { display: none; }
+    .notes-body { display: none; margin-top: 14px; }
+    .notes-wrap.open .notes-body { display: block; }
+    .notes-list { display: flex; flex-direction: column; gap: 10px; margin-bottom: 14px; }
+    .note-item { display: flex; gap: 10px; align-items: flex-start; }
+    .note-avatar { width: 30px; height: 30px; background: var(--teal-light); border: 1.5px solid var(--border-teal); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; color: var(--teal); flex-shrink: 0; }
+    .note-body-inner { flex: 1; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 10px 12px; }
+    .note-meta { display: flex; align-items: center; gap: 8px; margin-bottom: 4px; }
+    .note-who { font-size: 13px; font-weight: 600; color: var(--text); }
+    .note-when { font-size: 11px; color: var(--faint); }
+    .note-text { font-size: 13px; color: var(--muted); line-height: 1.5; white-space: pre-wrap; }
+    .no-notes { font-size: 13px; color: var(--faint); margin: 0 0 12px; }
+    .note-composer { display: flex; gap: 8px; align-items: flex-start; }
+    .note-input { flex: 1; border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 9px 12px; font-size: 13px; font-family: inherit; color: var(--text); resize: none; outline: none; transition: border-color 0.15s; background: var(--surface); }
+    .note-input:focus { border-color: var(--teal); background: #fff; }
+    .note-submit-btn { background: var(--teal); color: #fff; border: none; border-radius: var(--radius-sm); padding: 9px 16px; font-size: 13px; font-weight: 600; cursor: pointer; font-family: inherit; transition: background 0.15s; white-space: nowrap; }
+    .note-submit-btn:hover { background: var(--teal-dark); }
+
+    .footer-note { background: var(--teal-light); border: 1px solid var(--border-teal); border-radius: var(--radius); padding: 20px 24px; font-size: 14px; color: var(--teal-dark); line-height: 1.7; margin-top: 40px; }
+    .toast { position: fixed; bottom: 28px; left: 50%; transform: translateX(-50%) translateY(20px); background: var(--navy); color: #fff; padding: 11px 20px; border-radius: 999px; font-size: 13px; font-weight: 500; opacity: 0; pointer-events: none; transition: opacity 0.2s, transform 0.2s; z-index: 999; white-space: nowrap; }
+    .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+    .toast.error { background: #c53030; }
+
+    footer { background: var(--navy); padding: 40px 28px; }
+    .footer-inner { max-width: var(--max); margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
+    .footer-brand { font-size: 15px; font-weight: 700; color: rgba(255,255,255,0.85); }
+    .footer-copy { font-size: 12px; color: rgba(255,255,255,0.25); }
+    .footer-link { font-size: 13px; color: rgba(255,255,255,0.45); text-decoration: none; transition: color 0.15s; }
+    .footer-link:hover { color: rgba(255,255,255,0.85); }
+
+    @media (max-width: 900px) {
+      .hero-inner { grid-template-columns: 1fr; }
+      .hero-card { display: none; }
+      .stats-inner, .platform-grid, .tier-grid, .stretch-grid { grid-template-columns: 1fr; }
+      .platform-skip-grid { grid-template-columns: repeat(2,1fr); }
+      .detail-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 640px) {
+      .page { padding: 40px 16px 80px; }
+      .stats-inner { grid-template-columns: 1fr; }
+      .stat-item { border-right: none; border-bottom: 1px solid var(--border); }
+      .platform-skip-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">
+        <span class="nav-logo-icon"><svg viewBox="0 0 16 16"><path d="M8 1.5C4.41 1.5 1.5 4.41 1.5 8S4.41 14.5 8 14.5 14.5 11.59 14.5 8 11.59 1.5 8 1.5zm0 2a4.5 4.5 0 110 9 4.5 4.5 0 010-9z" opacity=".4"/><circle cx="8" cy="8" r="2.5"/></svg></span>
+        Arts of Dreaming
+      </a>
+      <ul class="nav-links">
+        <li><a href="#platforms">Platforms</a></li>
+        <li><a href="#patreon">Patreon</a></li>
+        <li><a href="#kickstarter">Kickstarter</a></li>
+      </ul>
+      <div style="display:flex;align-items:center;gap:12px;">
+        <a href="index.html" class="nav-back">← Action Plan</a>
+        <div class="author-wrap">
+          <span class="author-label">Your name</span>
+          <input type="text" id="author-input" class="author-input" placeholder="Enter your name…">
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-inner">
+      <div>
+        <div class="hero-eyebrow">Arts of Dreaming</div>
+        <h1>Funding &amp; <em>Campaign</em> Plan</h1>
+        <p class="hero-desc">A structured plan for launching Patreon membership tiers and a Kickstarter campaign for the physical Archetype Card Deck — plus a full comparison of every relevant funding platform so you put your energy in the right place.</p>
+        <div class="hero-actions">
+          <a href="#patreon" class="btn btn-primary">Patreon plan →</a>
+          <a href="#kickstarter" class="btn btn-ghost">Kickstarter plan</a>
+        </div>
+      </div>
+      <div class="hero-card">
+        <div class="hero-card-label">Jump to section</div>
+        <ul class="jump-list">
+          <li><a href="#platforms"><span class="jump-num gold">★</span> Platform comparison</a></li>
+          <li><a href="#patreon"><span class="jump-num">1</span> Patreon campaign</a></li>
+          <li><a href="#kickstarter"><span class="jump-num gold">2</span> Kickstarter campaign</a></li>
+          <li><a href="index.html"><span class="jump-num">↩</span> Master action plan</a></li>
+          <li><a href="email-marketing-plan.html"><span class="jump-num">✉</span> Email marketing plan</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- STATS -->
+  <div class="stats-bar">
+    <div class="stats-inner">
+      <div class="stat-item"><div class="stat-num teal">2</div><div class="stat-label">Primary platforms recommended</div></div>
+      <div class="stat-item"><div class="stat-num gold">4</div><div class="stat-label">Patreon membership tiers</div></div>
+      <div class="stat-item"><div class="stat-num">7</div><div class="stat-label">Kickstarter reward tiers</div></div>
+      <div class="stat-item"><div class="stat-num teal">12</div><div class="stat-label">Week pre-launch timeline</div></div>
+    </div>
+  </div>
+
+  <div class="page">
+
+    <!-- ── PLATFORM COMPARISON ── -->
+    <section id="platforms">
+      <div class="platform-dark">
+        <div class="section-tag gold">Before you launch</div>
+        <h2>Platform comparison</h2>
+        <p>Arts of Dreaming needs two types of funding infrastructure: a product launch platform for the physical deck, and a recurring membership platform for community and ongoing support. Here's how every major option stacks up.</p>
+
+        <div style="margin-bottom:20px;">
+          <div style="font-size:11px;font-weight:700;letter-spacing:0.10em;text-transform:uppercase;color:rgba(255,255,255,0.40);margin-bottom:12px;">Recommended — use these</div>
+          <div class="platform-grid">
+            <div class="platform-box featured">
+              <div class="platform-name">Kickstarter</div>
+              <span class="platform-tag gold">Physical products</span>
+              <div class="platform-fee">Fees: <strong>5% + 3% + $0.20</strong> per pledge · All-or-nothing model</div>
+              <div class="platform-verdict">The best-in-class platform for physical product crowdfunding. Card decks perform extremely well here. All-or-nothing model creates urgency and validates demand before you commit to production. Backers become your first email list. <strong>Build your deck campaign here first.</strong></div>
+            </div>
+            <div class="platform-box featured">
+              <div class="platform-name">Patreon</div>
+              <span class="platform-tag gold">Recurring community</span>
+              <div class="platform-fee">Fees: <strong>10% platform + ~3% processing</strong> · Monthly recurring</div>
+              <div class="platform-verdict">The strongest platform for recurring membership with exclusive content and community identity. Your archetype system makes tiered membership feel natural — each tier deepens the dreamer's practice. <strong>Launch alongside or just after Kickstarter.</strong></div>
+            </div>
+            <div class="platform-box">
+              <div class="platform-name">Indiegogo InDemand</div>
+              <span class="platform-tag teal">Post-campaign sales</span>
+              <div class="platform-fee">Fees: <strong>5% + 2.9% + $0.30</strong> · Flexible or fixed funding</div>
+              <div class="platform-verdict">Less powerful than Kickstarter for initial launch, but the InDemand feature lets you continue taking pre-orders indefinitely after your Kickstarter closes. Run Kickstarter first, then port to Indiegogo InDemand for ongoing deck pre-orders. Secondary use only.</div>
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-bottom:20px;">
+          <div style="font-size:11px;font-weight:700;letter-spacing:0.10em;text-transform:uppercase;color:rgba(255,255,255,0.40);margin-bottom:12px;">Worth knowing — consider later</div>
+          <div class="platform-grid">
+            <div class="platform-box">
+              <div class="platform-name">BackerKit</div>
+              <span class="platform-tag teal">Fulfillment-first</span>
+              <div class="platform-fee">Fees: <strong>5% capped at $5/backer</strong></div>
+              <div class="platform-verdict">Excellent as a Kickstarter companion tool for pledge management, surveys, and add-ons. Also has its own crowdfunding platform if Kickstarter doesn't fit. Best used as your post-campaign fulfilment layer regardless of which platform you launch on.</div>
+            </div>
+            <div class="platform-box">
+              <div class="platform-name">Ko-fi</div>
+              <span class="platform-tag teal">All-in-one shop</span>
+              <div class="platform-fee">Fees: <strong>5% (or $6/mo for 0%)</strong> + Stripe processing</div>
+              <div class="platform-verdict">Handles tips, one-time product sales, digital downloads, and memberships in one place. Lowest overhead of any option. Good for ongoing deck sales after Kickstarter closes without Shopify fees — or as a lightweight Patreon alternative if you want lower fees.</div>
+            </div>
+            <div class="platform-box">
+              <div class="platform-name">Crowdfundr</div>
+              <span class="platform-tag">0% platform fee</span>
+              <div class="platform-fee">Fees: <strong>0% platform</strong> (supporters cover Stripe fees voluntarily)</div>
+              <div class="platform-verdict">Genuinely free and privacy-focused, but requires you to bring your own audience entirely. No discovery built in. Best as a fallback if you want to run a smaller campaign without Kickstarter's all-or-nothing risk — e.g. a limited print run for existing community members only.</div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div style="font-size:11px;font-weight:700;letter-spacing:0.10em;text-transform:uppercase;color:rgba(255,255,255,0.40);margin-bottom:12px;">Not recommended for this model</div>
+          <div class="platform-skip-grid">
+            <div class="platform-skip-box">
+              <div class="platform-skip-name">Republic</div>
+              <div class="platform-skip-reason">Equity crowdfunding. Only relevant if raising investment capital and willing to give ownership stake. Wrong tool for product launches.</div>
+            </div>
+            <div class="platform-skip-box">
+              <div class="platform-skip-name">Substack</div>
+              <div class="platform-skip-reason">Newsletter-only. No product commerce, no community features. You're already using Sender.net + Skool which does this better.</div>
+            </div>
+            <div class="platform-skip-box">
+              <div class="platform-skip-name">Memberful</div>
+              <div class="platform-skip-reason">Monthly platform fees plus transaction fees. Creates overlap with Skool. Worth it only if you outgrow Patreon and need white-label memberships.</div>
+            </div>
+            <div class="platform-skip-box">
+              <div class="platform-skip-name">Wefunder / SeedInvest</div>
+              <div class="platform-skip-reason">Equity platforms for startup investment rounds. Not designed for product-based creator businesses at this stage.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── PATREON ── -->
+    <section id="patreon">
+      <div class="section-tag">Plan one</div>
+      <h2>Patreon campaign plan</h2>
+      <p class="section-intro">Patreon is the home for your most committed dreamers — people who want to support the brand beyond one-time purchases. The archetype identity system makes tiered membership feel natural: each tier deepens the practice rather than just adding perks.</p>
+
+      <div class="plan-grid">
+
+        <!-- Tier Structure -->
+        <article class="plan-card" data-card-id="fund-patreon-tiers">
+          <div class="card-top">
+            <div><div class="card-kicker">Step 1</div><h3>Membership tier structure</h3></div>
+            <span class="status-badge teal">Design first</span>
+          </div>
+          <p class="card-meta">Four tiers structured around deepening the dream practice — not just adding content volume. Each tier name is an identity the patron can hold.</p>
+          <div class="tier-grid">
+            <div class="tier-card t1">
+              <div class="tier-name">🌙 The Dreamer</div>
+              <div class="tier-price">$7<span style="font-size:13px;font-weight:500;color:var(--muted)">/mo</span></div>
+              <ul class="tier-perks">
+                <li>Monthly archetype card pull + interpretation</li>
+                <li>Exclusive dream journal prompts</li>
+                <li>Patron-only community feed</li>
+                <li>Early access to new app features</li>
+              </ul>
+            </div>
+            <div class="tier-card t2">
+              <div class="tier-name">✨ The Oracle</div>
+              <div class="tier-price">$19<span style="font-size:13px;font-weight:500;color:var(--muted)">/mo</span></div>
+              <ul class="tier-perks">
+                <li>Everything in The Dreamer</li>
+                <li>2 premium Dream Sensei sessions/month</li>
+                <li>Behind-the-scenes: deck art + creation process</li>
+                <li>Monthly archetype deep-dive post</li>
+              </ul>
+            </div>
+            <div class="tier-card t3">
+              <div class="tier-name">🌟 The Visionary</div>
+              <div class="tier-price">$39<span style="font-size:13px;font-weight:500;color:var(--muted)">/mo</span></div>
+              <ul class="tier-perks">
+                <li>Everything in The Oracle</li>
+                <li>Quarterly exclusive physical card</li>
+                <li>Monthly live dream circle (group session)</li>
+                <li>Skool VIP room access</li>
+                <li>Name in credits for new products</li>
+              </ul>
+            </div>
+            <div class="tier-card t4">
+              <div class="tier-name">💫 The Luminary</div>
+              <div class="tier-price">$97<span style="font-size:13px;font-weight:500;color:var(--gold)">/mo</span></div>
+              <ul class="tier-perks">
+                <li>Everything in The Visionary</li>
+                <li>Monthly 1:1 dream interpretation (30 min)</li>
+                <li>Founding member recognition</li>
+                <li>Co-creation input on new products</li>
+                <li>First access to all limited physical releases</li>
+              </ul>
+            </div>
+          </div>
+          <details>
+            <summary>Pricing rationale &amp; positioning notes</summary>
+            <div class="details-body">
+              <div class="detail-grid">
+                <div class="detail-box">
+                  <h4>Why these price points</h4>
+                  <ul class="detail-list">
+                    <li>$7 is low enough for impulse support but still filters casual followers from genuine community members.</li>
+                    <li>$19 is the sweet spot for recurring digital value — equivalent to one premium subscription.</li>
+                    <li>$39 with physical mail unlocks a different buyer psychology (tangible product = higher commitment).</li>
+                    <li>$97 should feel like a premium coaching relationship, not just content.</li>
+                  </ul>
+                </div>
+                <div class="detail-box">
+                  <h4>Founding member strategy</h4>
+                  <ul class="detail-list">
+                    <li>Offer 50 founding spots at 20% off all tiers for the first 30 days.</li>
+                    <li>Founding members get a permanent badge and early access to all future tiers.</li>
+                    <li>This creates urgency and rewards your most loyal existing users first.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </details>
+        </article>
+
+        <!-- Content Calendar -->
+        <article class="plan-card" data-card-id="fund-patreon-content">
+          <div class="card-top">
+            <div><div class="card-kicker">Step 2</div><h3>Monthly content commitment</h3></div>
+            <span class="status-badge">Content plan</span>
+          </div>
+          <p class="card-meta">Patreon succeeds or fails on consistent content delivery. Map the monthly output before you launch so you know what you're committing to.</p>
+          <ul class="check-list">
+            <li><span>Week 1: Monthly archetype card pull post (all tiers) — the anchor content piece</span></li>
+            <li><span>Week 2: Behind-the-scenes post — deck creation, art process, or product development (Oracle+)</span></li>
+            <li><span>Week 3: Deep-dive archetype post — rotating through the 9 archetypes quarterly (Oracle+)</span></li>
+            <li><span>Week 4: Monthly live dream circle — group video session for Visionary+ patrons</span></li>
+            <li><span>Ongoing: 1:1 sessions booked individually for Luminary patrons (calendar link)</span></li>
+            <li><span>Monthly: Quarterly physical card mailed to all Visionary+ patrons</span></li>
+          </ul>
+          <details>
+            <summary>Content production notes</summary>
+            <div class="details-body">
+              <div class="detail-grid">
+                <div class="detail-box">
+                  <h4>Time estimate</h4>
+                  <ul class="detail-list">
+                    <li>Weekly post: ~2 hours/post</li>
+                    <li>Monthly live session: 1.5 hours inc. prep</li>
+                    <li>1:1 sessions: 30 min each × number of Luminary patrons</li>
+                    <li>Physical card fulfillment: outsource to a fulfillment service once Visionary tier has 20+ patrons</li>
+                  </ul>
+                </div>
+                <div class="detail-box">
+                  <h4>Tools needed</h4>
+                  <ul class="detail-list">
+                    <li>Zoom or StreamYard for live dream circles</li>
+                    <li>Calendly for 1:1 session booking (Luminary)</li>
+                    <li>Printful or similar for physical card fulfillment</li>
+                    <li>Canva for post graphics and card artwork</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </details>
+        </article>
+
+        <!-- Launch Checklist -->
+        <article class="plan-card" data-card-id="fund-patreon-launch">
+          <div class="card-top">
+            <div><div class="card-kicker">Step 3</div><h3>Pre-launch checklist</h3></div>
+            <span class="status-badge gold">Launch sequence</span>
+          </div>
+          <p class="card-meta">Complete every item before going public. A half-built Patreon page converts poorly and damages first impressions.</p>
+          <ul class="check-list">
+            <li><span>Write all 4 tier descriptions — identity-driven, not just feature lists</span></li>
+            <li><span>Record a 60-90 second welcome video — your face, your voice, your why</span></li>
+            <li><span>Create 3 preview posts (free tier visible) showing the quality of patron content</span></li>
+            <li><span>Set up Patreon ↔ Discord integration for automatic role assignment per tier</span></li>
+            <li><span>Connect Patreon to Zapier → CRM to tag new patrons by tier</span></li>
+            <li><span>Prepare founding member email to your existing list (launch day send)</span></li>
+            <li><span>Set up fulfillment process for the quarterly Visionary physical card</span></li>
+            <li><span>Create 5 weeks of content in advance before going live</span></li>
+            <li><span>Test all tier access, payment flows, and cancellation process</span></li>
+          </ul>
+          <details>
+            <summary>Launch day sequence</summary>
+            <div class="details-body">
+              <div class="detail-grid">
+                <div class="detail-box">
+                  <h4>Day 0 — go live</h4>
+                  <ul class="detail-list">
+                    <li>Email blast to full Sender.net list announcing Patreon</li>
+                    <li>Post across Instagram, TikTok, and Pinterest</li>
+                    <li>Activate founding member 20% discount (50 spots, 30-day limit)</li>
+                    <li>Pin Patreon link to all social bios</li>
+                  </ul>
+                </div>
+                <div class="detail-box">
+                  <h4>Goal: Month 1</h4>
+                  <ul class="detail-list">
+                    <li>50+ total patrons across all tiers</li>
+                    <li>10+ at Oracle or above</li>
+                    <li>3+ Luminary founding members</li>
+                    <li>Monthly recurring revenue: $500+ MRR</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </details>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ── KICKSTARTER ── -->
+    <section id="kickstarter">
+      <div class="section-tag gold">Plan two</div>
+      <h2>Kickstarter campaign plan</h2>
+      <p class="section-intro">The Arts of Dreaming Archetype Card Deck is the perfect Kickstarter product — visually striking, identity-driven, and deeply tied to an existing community that already believes in the archetypes. This plan covers the full 12-week pre-launch runway and 30-day live campaign.</p>
+
+      <div class="plan-grid">
+
+        <!-- Campaign Overview -->
+        <article class="plan-card gold-card" data-card-id="fund-ks-overview">
+          <div class="card-top">
+            <div><div class="card-kicker gold">The product</div><h3>Archetype Card Deck — campaign overview</h3></div>
+            <span class="status-badge gold">Flagship launch</span>
+          </div>
+          <p class="card-meta">A premium 78-card oracle deck with a 180-page hardcover guidebook, housed in a magnetic closure box with gold foil accents. One card per archetype plus supporting dream symbol and practice cards.</p>
+          <div class="detail-grid" style="margin-top:4px;">
+            <div class="detail-box">
+              <h4>Campaign specs</h4>
+              <ul class="detail-list">
+                <li>Funding goal: $25,000 (covers minimum production run)</li>
+                <li>Campaign duration: 30 days</li>
+                <li>Platform: Kickstarter</li>
+                <li>Fulfillment partner: BackerKit for pledge management</li>
+                <li>Production partner: TBD (recommend MPC or PrintingForLess for cards)</li>
+              </ul>
+            </div>
+            <div class="detail-box">
+              <h4>What makes it fundable</h4>
+              <ul class="detail-list">
+                <li>Existing email list = Day 1 backers before Kickstarter algorithm kicks in</li>
+                <li>Archetype identity = strong social sharing motivation</li>
+                <li>Visual product = strong organic content on TikTok and Instagram</li>
+                <li>Spiritual wellness is a proven Kickstarter category</li>
+                <li>Dream Sensei app = existing user base with built-in investment</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <!-- Reward Tiers -->
+        <article class="plan-card" data-card-id="fund-ks-rewards">
+          <div class="card-top">
+            <div><div class="card-kicker">Campaign rewards</div><h3>Backer reward tiers</h3></div>
+            <span class="status-badge teal">7 tiers</span>
+          </div>
+          <p class="card-meta">Structured so backers can enter at any budget, with upsell paths built into each tier toward the deck and community products.</p>
+          <div class="reward-table-wrap">
+            <table class="reward-table">
+              <thead><tr><th>Pledge</th><th>Tier name</th><th>What's included</th><th>Type</th></tr></thead>
+              <tbody>
+                <tr>
+                  <td class="reward-price">$1</td>
+                  <td><div class="reward-name">Dreamer Supporter</div></td>
+                  <td class="reward-desc">Name in the guidebook acknowledgements. Show of support.</td>
+                  <td><span class="reward-badge teal">Entry</span></td>
+                </tr>
+                <tr>
+                  <td class="reward-price">$29</td>
+                  <td><div class="reward-name">The Digital Dreamer</div></td>
+                  <td class="reward-desc">PDF guidebook + printable card set + digital archetype report</td>
+                  <td><span class="reward-badge teal">Digital</span></td>
+                </tr>
+                <tr>
+                  <td class="reward-price">$59</td>
+                  <td><div class="reward-name">The Standard Path</div></td>
+                  <td class="reward-desc">Full physical deck (78 cards) + 180-page guidebook</td>
+                  <td><span class="reward-badge teal">Physical</span></td>
+                </tr>
+                <tr>
+                  <td class="reward-price">$89</td>
+                  <td><div class="reward-name">The Deluxe Path</div></td>
+                  <td class="reward-desc">Deluxe deck + guidebook + exclusive backer-only card (not in retail edition)</td>
+                  <td><span class="reward-badge gold">Popular</span></td>
+                </tr>
+                <tr>
+                  <td class="reward-price">$149</td>
+                  <td><div class="reward-name">The Oracle Path</div></td>
+                  <td class="reward-desc">Deluxe deck + guidebook + 6 months Dream Sensei Premium subscription</td>
+                  <td><span class="reward-badge gold">Bundle</span></td>
+                </tr>
+                <tr>
+                  <td class="reward-price">$249</td>
+                  <td><div class="reward-name">The Visionary Path</div></td>
+                  <td class="reward-desc">Collector's edition deck + guidebook + 1 year Dream Sensei + 3 months Luminary Patreon access</td>
+                  <td><span class="reward-badge gold">Premium</span></td>
+                </tr>
+                <tr>
+                  <td class="reward-price">$499</td>
+                  <td><div class="reward-name">The Luminary Patron</div></td>
+                  <td class="reward-desc">Everything in Visionary + name engraved in guidebook + personal 60-min archetype reading with founder</td>
+                  <td><span class="reward-badge gold">VIP · Limit 20</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <details>
+            <summary>Reward tier strategy notes</summary>
+            <div class="details-body">
+              <div class="detail-grid">
+                <div class="detail-box">
+                  <h4>Where most revenue comes from</h4>
+                  <ul class="detail-list">
+                    <li>The $89 Deluxe Path should be your "most popular" badge — this is where the bulk of backers land</li>
+                    <li>The $149 Oracle Path is your key upsell — it bundles the physical product with your SaaS</li>
+                    <li>Limit the $499 Luminary to 20 spots to create scarcity and protect your time</li>
+                  </ul>
+                </div>
+                <div class="detail-box">
+                  <h4>Add-ons to offer via BackerKit</h4>
+                  <ul class="detail-list">
+                    <li>Extra deck (retail price, +$20 shipping)</li>
+                    <li>Upgrade to Collector's Edition (+$30)</li>
+                    <li>Enamel pin set (if stretch goal unlocked)</li>
+                    <li>Dream journal (physical) add-on</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </details>
+        </article>
+
+        <!-- Stretch Goals -->
+        <article class="plan-card" data-card-id="fund-ks-stretch">
+          <div class="card-top">
+            <div><div class="card-kicker">If we exceed the goal</div><h3>Stretch goals</h3></div>
+            <span class="status-badge">4 tiers</span>
+          </div>
+          <p class="card-meta">Stretch goals keep momentum alive after the initial funding goal is hit. Reveal them one at a time as each is unlocked to sustain sharing and press coverage throughout the campaign.</p>
+          <div class="stretch-grid">
+            <div class="stretch-box">
+              <div class="stretch-goal-num">$35K</div>
+              <div>
+                <div class="stretch-title">Upgraded packaging</div>
+                <div class="stretch-desc">Hardshell case with velvet inner lining and ribbon pull — collector-grade presentation that photographs beautifully and drives social sharing.</div>
+              </div>
+            </div>
+            <div class="stretch-box">
+              <div class="stretch-goal-num">$50K</div>
+              <div>
+                <div class="stretch-title">3 additional archetype cards</div>
+                <div class="stretch-desc">Expand the deck with 3 new archetypes + expanded guidebook section. Backers at $59+ receive the expanded version automatically.</div>
+              </div>
+            </div>
+            <div class="stretch-box">
+              <div class="stretch-goal-num">$75K</div>
+              <div>
+                <div class="stretch-title">AR card reveal companion</div>
+                <div class="stretch-desc">Animated augmented reality layer for the physical deck — point your phone at any card for a living archetype reveal. Major differentiator from competitor decks.</div>
+              </div>
+            </div>
+            <div class="stretch-box">
+              <div class="stretch-goal-num">$100K</div>
+              <div>
+                <div class="stretch-title">International edition</div>
+                <div class="stretch-desc">Translated guidebook in Spanish and French, opening the deck to global spiritual wellness markets. Printed simultaneously and shipped from regional fulfillment centers.</div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Pre-launch Timeline -->
+        <article class="plan-card" data-card-id="fund-ks-timeline">
+          <div class="card-top">
+            <div><div class="card-kicker">12-week runway</div><h3>Pre-launch timeline</h3></div>
+            <span class="status-badge gold">Start 12 weeks out</span>
+          </div>
+          <p class="card-meta">Kickstarter success is 80% pre-launch. The algorithm rewards campaigns that hit 30% of their goal on Day 1 — which only happens with a warmed-up list and press ready to publish.</p>
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-left"><div class="tl-dot teal">1–2</div><div class="tl-line"></div></div>
+              <div class="tl-content">
+                <div class="tl-week">Weeks 1–2</div>
+                <div class="tl-title">Finalize campaign assets</div>
+                <div class="tl-desc">Lock campaign page copy, headline, reward descriptions. Brief photographer and videographer. Confirm production specs and minimum order quantities with card printer.</div>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-left"><div class="tl-dot teal">3–4</div><div class="tl-line"></div></div>
+              <div class="tl-content">
+                <div class="tl-week">Weeks 3–4</div>
+                <div class="tl-title">Professional photography &amp; video</div>
+                <div class="tl-desc">Product photography for campaign page and social. Record a 2-minute campaign video. Produce 10 short-form clips (TikTok / Instagram Reels) from the shoot for scheduled release.</div>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-left"><div class="tl-dot gold">5–6</div><div class="tl-line"></div></div>
+              <div class="tl-content">
+                <div class="tl-week">Weeks 5–6</div>
+                <div class="tl-title">Influencer and press outreach</div>
+                <div class="tl-desc">Identify 20–30 spiritual wellness, tarot, and dream-focused creators on Instagram and TikTok. Send personalised preview decks (physical prototypes). Embargo press for launch week.</div>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-left"><div class="tl-dot gold">7–8</div><div class="tl-line"></div></div>
+              <div class="tl-content">
+                <div class="tl-week">Weeks 7–8</div>
+                <div class="tl-title">Early backer list building</div>
+                <div class="tl-desc">Launch a dedicated "Notify me" landing page. Run paid social to warm audiences. Goal: 500+ early backer email sign-ups before going live. These are your Day 1 pledges.</div>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-left"><div class="tl-dot teal">9–10</div><div class="tl-line"></div></div>
+              <div class="tl-content">
+                <div class="tl-week">Weeks 9–10</div>
+                <div class="tl-title">Soft launch to email list</div>
+                <div class="tl-desc">Send early access to your existing Sender.net subscribers — 48-hour head start before public launch. First 100 backers get a special early bird price (-10%). Begin daily social content cadence.</div>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-left"><div class="tl-dot gold">11</div><div class="tl-line"></div></div>
+              <div class="tl-content">
+                <div class="tl-week">Week 11</div>
+                <div class="tl-title">Countdown and press embargo lift</div>
+                <div class="tl-desc">Daily countdown posts across all channels. Embargo lifts — influencers and press publish their coverage simultaneously for maximum Day 1 spike. Final reminder to notify-me list.</div>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-left"><div class="tl-dot gold">12</div></div>
+              <div class="tl-content">
+                <div class="tl-week">Week 12 — Launch day</div>
+                <div class="tl-title">Kickstarter goes live</div>
+                <div class="tl-desc">Full email blast to entire Sender.net list. All social channels post simultaneously. Live stream on Instagram/TikTok watching the counter. Goal: hit 30% ($7,500) within first 48 hours to trigger Kickstarter's internal algorithm boost.</div>
+              </div>
+            </div>
+          </div>
+          <details>
+            <summary>During the live campaign (30 days)</summary>
+            <div class="details-body">
+              <div class="detail-grid">
+                <div class="detail-box">
+                  <h4>Keep momentum alive</h4>
+                  <ul class="detail-list">
+                    <li>Post backer update every 5 days — show progress, thank community, tease stretch goals</li>
+                    <li>Reveal stretch goals one at a time as each is hit — don't show all at once</li>
+                    <li>Respond to every comment and question in the first 48 hours</li>
+                    <li>Mid-campaign email to non-backers on your list (Day 15)</li>
+                    <li>Final 48-hour push email + social to entire audience</li>
+                  </ul>
+                </div>
+                <div class="detail-box">
+                  <h4>Post-campaign flow</h4>
+                  <ul class="detail-list">
+                    <li>BackerKit surveys sent within 2 weeks of close</li>
+                    <li>All backers added to Sender.net list → Campaign 1 or 2 based on pledge level</li>
+                    <li>Port campaign to Indiegogo InDemand for ongoing pre-orders</li>
+                    <li>Production timeline communicated to backers within 1 week</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </details>
+        </article>
+
+      </div>
+
+      <div class="footer-note">Recommended sequence: launch Patreon first to build recurring revenue momentum, then use Patreon patrons as your most vocal Kickstarter Day 1 backers. The two platforms amplify each other — Patreon builds the community that funds the Kickstarter, and the Kickstarter brings in new people who become Patreon patrons.</div>
+    </section>
+
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">Arts of Dreaming</div>
+      <a href="index.html" class="footer-link">← Back to Action Plan</a>
+      <div class="footer-copy">© Arts of Dreaming 2026. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast"></div>
+
+  <!-- FIREBASE -->
+  <script type="module">
+    import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js';
+    import { getFirestore, doc, onSnapshot, setDoc, arrayUnion } from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js';
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyBQvfLwUWcPHTvL7XRZxmqW1SOu3SFepKs",
+      authDomain: "studio-1652924936-40c9f.firebaseapp.com",
+      projectId: "studio-1652924936-40c9f",
+      storageBucket: "studio-1652924936-40c9f.firebasestorage.app",
+      messagingSenderId: "735989568298",
+      appId: "1:735989568298:web:afa5125233dfcf27724453"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+
+    const toastEl = document.getElementById('toast');
+    let toastTimer;
+    function toast(msg, isError = false) {
+      toastEl.textContent = msg;
+      toastEl.className = 'toast show' + (isError ? ' error' : '');
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => toastEl.classList.remove('show'), 3000);
+    }
+
+    let author = localStorage.getItem('aod-author') || '';
+    const authorInput = document.getElementById('author-input');
+    authorInput.value = author;
+    authorInput.addEventListener('change', () => {
+      author = authorInput.value.trim();
+      localStorage.setItem('aod-author', author);
+      if (author) toast(`Signed in as ${author}`);
+    });
+
+    function requireAuthor() {
+      if (author) return true;
+      authorInput.classList.add('shake');
+      authorInput.focus();
+      toast('Enter your name in the top bar first', true);
+      setTimeout(() => authorInput.classList.remove('shake'), 800);
+      return false;
+    }
+
+    function fmt(iso) {
+      if (!iso) return '';
+      const d = new Date(iso);
+      return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' }) + ' · ' + d.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit' });
+    }
+    function initials(name) { return (name || '?').trim().split(/\s+/).map(w => w[0]).join('').toUpperCase().slice(0, 2); }
+
+    const CARDS = ['fund-patreon-tiers','fund-patreon-content','fund-patreon-launch','fund-ks-overview','fund-ks-rewards','fund-ks-stretch','fund-ks-timeline'];
+
+    CARDS.forEach(cardId => {
+      const el = document.querySelector(`[data-card-id="${cardId}"]`);
+      if (!el) return;
+      const ref = doc(db, 'aod-plan', cardId);
+
+      // Inject checkboxes into check-lists
+      el.querySelectorAll('.check-list li').forEach((li, idx) => {
+        const cb = document.createElement('input');
+        cb.type = 'checkbox'; cb.className = 'task-check'; cb.dataset.idx = idx;
+        const span = document.createElement('span');
+        span.innerHTML = li.innerHTML;
+        li.innerHTML = ''; li.appendChild(cb); li.appendChild(span);
+        cb.addEventListener('change', async () => {
+          if (!requireAuthor()) { cb.checked = !cb.checked; return; }
+          const prev = !cb.checked;
+          try {
+            await setDoc(ref, { tasks: { [idx]: { checked: cb.checked, author: cb.checked ? author : null, at: cb.checked ? new Date().toISOString() : null } } }, { merge: true });
+            toast(cb.checked ? 'Task marked complete' : 'Task unchecked');
+          } catch (e) { cb.checked = prev; toast('Could not save — check Firestore', true); console.error(e); }
+        });
+      });
+
+      // Inject notes
+      const wrap = document.createElement('div');
+      wrap.className = 'notes-wrap';
+      wrap.innerHTML = `
+        <button class="notes-toggle-btn">
+          <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H2a1 1 0 00-1 1v9a1 1 0 001 1h2.5L8 16l3.5-3H14a1 1 0 001-1V3a1 1 0 00-1-1z"/><path d="M5 6h6M5 9.5h3.5"/></svg>
+          Team notes <span class="notes-count-badge"></span>
+        </button>
+        <div class="notes-body">
+          <div class="notes-list"></div>
+          <div class="note-composer">
+            <textarea class="note-input" placeholder="Add a note for the team…" rows="2"></textarea>
+            <button class="note-submit-btn">Post</button>
+          </div>
+        </div>`;
+      el.appendChild(wrap);
+
+      wrap.querySelector('.notes-toggle-btn').addEventListener('click', () => wrap.classList.toggle('open'));
+      wrap.querySelector('.note-submit-btn').addEventListener('click', async () => {
+        if (!requireAuthor()) return;
+        const ta = wrap.querySelector('.note-input');
+        const text = ta.value.trim();
+        if (!text) return;
+        try {
+          await setDoc(ref, { notes: arrayUnion({ text, author, at: new Date().toISOString() }) }, { merge: true });
+          ta.value = ''; toast('Note posted');
+        } catch (e) { toast('Could not save — check Firestore', true); console.error(e); }
+      });
+
+      onSnapshot(ref, snap => {
+        const data = snap.data() || {};
+        const tasks = data.tasks || {};
+        el.querySelectorAll('.task-check').forEach(cb => {
+          const t = tasks[cb.dataset.idx] || {};
+          cb.checked = !!t.checked;
+          cb.closest('li').classList.toggle('task-done', !!t.checked);
+          cb.title = t.checked && t.author ? `${t.author} · ${fmt(t.at)}` : '';
+        });
+        const notes = data.notes || [];
+        wrap.querySelector('.notes-count-badge').textContent = notes.length || '';
+        wrap.querySelector('.notes-list').innerHTML = notes.length
+          ? [...notes].reverse().map(n => `
+              <div class="note-item">
+                <div class="note-avatar">${initials(n.author)}</div>
+                <div class="note-body-inner">
+                  <div class="note-meta"><span class="note-who">${n.author||'Anonymous'}</span><span class="note-when">${fmt(n.at)}</span></div>
+                  <div class="note-text">${n.text.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/\n/g,'<br>')}</div>
+                </div>
+              </div>`).join('')
+          : '<p class="no-notes">No notes yet.</p>';
+      });
+    });
+  </script>
+
+</body>
+</html>
